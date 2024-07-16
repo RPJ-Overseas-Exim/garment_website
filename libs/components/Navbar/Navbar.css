@@ -1,0 +1,142 @@
+nav {
+  height: 3.5em;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: #fff;
+
+  & .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+/* nav logo element */
+.nav__logo-link {
+  font-weight: 900;
+  font-size: 1.5em;
+  letter-spacing: 110%;
+}
+
+/* nav bar options container */
+.nav__items {
+  display: flex;
+  list-style: none;
+  gap: 1.3rem;
+}
+
+.nav__item {
+  color: var(--text-regular);
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.active {
+  color: var(--text-dark);
+  font-weight: 700;
+}
+
+/* nav bar menu button */
+.nav__menu-button {
+  display: none;
+  font-size: 2rem;
+  background-color: var(--bg-light);
+  border-radius: 8px;
+  padding: 0.2rem;
+}
+
+.menu__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+/* nav bar search input  */
+.nav__search-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+
+  padding: 0.4rem;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--bg-light);
+}
+
+.nav__search-bar__icon {
+  cursor: pointer;
+}
+
+.nav__search-bar input {
+  background-color: transparent;
+  outline: none;
+  max-width: 100px;
+}
+
+/* nav bar buttons */
+.nav__buttons {
+  display: flex;
+  gap: 0.3rem;
+  align-items: center;
+}
+
+.nav__button {
+  background-color: var(--bg-light);
+  padding: 0.2em;
+  border-radius: 5px;
+}
+
+.nav__button-icon {
+  min-width: 20px;
+  min-height: 20px;
+  width: 1.7em;
+  height: 1.7em;
+}
+
+.login-button {
+  background-color: var(--button-dark);
+  padding: 0.5rem;
+  border-radius: 8px;
+  color: white;
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+
+.signup-button {
+  background-color: var(--button-light);
+  border: 1px solid var(--border-light);
+  padding: 0.5rem;
+  border-radius: 8px;
+
+  color: var(--text-purple);
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+/* css for mobile view */
+@media screen and (max-width: 769px) {
+  .nav__items {
+    display: none;
+  }
+
+  .nav__menu-button {
+    display: block;
+  }
+
+  .nav__search-bar {
+    display: none;
+  }
+
+  .nav__buttons {
+    display: none;
+  }
+}
