@@ -1,3 +1,3 @@
 export default function Home() {
-  return <main>Main body</main>;
+  return <main className="w-[100vw] h-[120vh]">Main body</main>;
 }

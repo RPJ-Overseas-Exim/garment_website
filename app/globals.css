@@ -7,3 +7,27 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+:root {
+  --text-regular: #807d7e;
+  --text-dark: #3c4242;
+  --text-purple: #8a33fd;
+
+  --bg-light: #f6f6f6;
+
+  --button-light: #fffff;
+  --button-dark: #8a33fd;
+
+  --border-light: #3c4242;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+@layer components {
+  .container {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
