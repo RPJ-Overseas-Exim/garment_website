@@ -8,6 +8,16 @@
   box-sizing: border-box;
 }
 
+@layer base {
+  img {
+    width: 100%;
+  }
+  
+  body {
+    overflow-x: hidden;
+  }
+}
+
 :root {
   --text-regular: #807d7e;
   --text-dark: #3c4242;
@@ -19,10 +29,6 @@
   --button-dark: #8a33fd;
 
   --border-light: #3c4242;
-}
-
-body {
-  overflow-x: hidden;
 }
 
 @layer components {
