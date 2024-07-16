@@ -12,7 +12,7 @@
   img {
     width: 100%;
   }
-  
+
   body {
     overflow-x: hidden;
   }
@@ -29,6 +29,7 @@
   --button-dark: #8a33fd;
 
   --border-light: #3c4242;
+  --border-regular: #fff;
 }
 
 @layer components {
