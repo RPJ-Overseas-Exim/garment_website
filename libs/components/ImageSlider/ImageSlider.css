@@ -1,0 +1,63 @@
+.slider {
+  position: relative;
+}
+
+.slider__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.3s;
+}
+
+.slider__image-container {
+  width: 100vw;
+  height: calc(100vh - 3.5em);
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.slider__buttons {
+  position: absolute;
+  display: flex;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.slider__button {
+  height: 100%;
+  transition: all 0.3s linear;
+  font-size: 4rem;
+  color: white;
+}
+
+.slider__button:active {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.progress-bar--outer {
+  position: absolute;
+  bottom: 3%;
+  width: 100%;
+  height: 40px;
+}
+
+.progress-bar--inner {
+  border-radius: 0.5rem;
+  overflow: hidden;
+  width: fit-content;
+  display: flex;
+  margin-inline: auto;
+}
+
+.progress-bar__candle {
+  width: 4.375rem;
+  height: 10px;
+  background-color: white;
+  opacity: 0.5;
+}
+
+.progress-bar__candle-active {
+  opacity: 0.8;
+}
