@@ -1,0 +1,40 @@
+.small-slider {
+  margin: 25px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.small-slider__title__block {
+  border: 3px solid var(--text-purple);
+  margin-right: 20px;
+}
+
+.small-slider__title {
+  font-size: 2rem;
+  font-weight: 900;
+  width: 95%;
+  margin: auto;
+}
+
+.small-slider__slides {
+  padding: 1rem;
+  margin: auto;
+}
+
+.small-carousel__slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.small-carousel__text {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+@media screen and (--viewport-medium) {
+  .small-slider__slides {
+    width: 90%;
+  }
+}
