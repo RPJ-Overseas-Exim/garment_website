@@ -12,6 +12,11 @@ export default function HeroSection() {
       alt: "Woman with a lot of shopping bags",
       position: "center",
     },
+    {
+      url: "/assets/images/slider-Image3.jpg",
+      alt: "Man in a hoddie",
+      position: "left",
+    },
   ];
   return (
     <section id="hero">

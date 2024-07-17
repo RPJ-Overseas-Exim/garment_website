@@ -1,0 +1,9 @@
+.featured-sales {
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.featured-sales--card {
+  width: 50%;
+  min-height: 18rem;
+}
