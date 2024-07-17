@@ -1,8 +1,8 @@
 "use client";
 import Image from "next/image";
-import type { sliderImages } from "../utils/customTypes";
+import type { sliderImages } from "../../utils/customTypes";
 import "./ImageSlider.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { RiArrowLeftWideFill, RiArrowRightWideFill } from "react-icons/ri";
 
 export default function ImageSlider({ images }: { images: sliderImages[] }) {
@@ -21,14 +21,17 @@ export default function ImageSlider({ images }: { images: sliderImages[] }) {
       setCurrentImageIndex(0);
       return;
     }
-    document
-      .querySelector("progress-bar-candle-active" + currentImageIndex)
-      ?.classList.remove("progress-bar__candle-active");
     setCurrentImageIndex(currentImageIndex + 1);
-    document
-      .querySelector("progress-bar-candle-active" + currentImageIndex)
-      ?.classList.add("progress-bar__candle-active");
   };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      handleRightButtonClick();
+    }, 2000);
+    return () => {
+      clearInterval(interval);
+    };
+  }, [handleRightButtonClick]);
 
   return (
     <div className="slider">
@@ -43,6 +46,7 @@ export default function ImageSlider({ images }: { images: sliderImages[] }) {
                 height={0}
                 sizes="100%"
                 className="slider__image"
+                priority={true}
                 style={{
                   transform: `translateX(${-currentImageIndex * 100}%)`,
                   objectPosition: image.position,
@@ -52,6 +56,7 @@ export default function ImageSlider({ images }: { images: sliderImages[] }) {
           );
         })}
       </div>
+
       <div className="slider__content"></div>
       <div className="slider__buttons">
         <button
@@ -67,12 +72,18 @@ export default function ImageSlider({ images }: { images: sliderImages[] }) {
           <RiArrowRightWideFill />
         </button>
       </div>
+
       <div className="progress-bar--outer">
         <div className="progress-bar--inner">
           {images.map((_, index) => {
             return (
               <div
-                className={`progress-bar__candle progress-bar-candle${index}`}
+                className={
+                  `progress-bar__candle progress-bar-candle${index}` +
+                  (currentImageIndex === index
+                    ? " progress-bar__candle-active"
+                    : "")
+                }
                 key={index}
               ></div>
             );
