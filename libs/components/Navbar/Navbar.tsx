@@ -56,13 +56,18 @@ export default function Navbar() {
           </ul>
 
           {/* search bar element */}
-          <div className="nav__search-bar">
+          {/* <div className="nav__search-bar">
             <FaSearch className="nav__search-bar__icon" />
             <input type="query" placeholder="Search" />
-          </div>
+          </div> */}
 
           {/* buttons elements */}
           <div className="nav__buttons" onClick={closeMenu}>
+            {/* Search icon */}
+            <Link href={"#"} className="nav__button">
+              <FaSearch className="cursor-pointer w-[1.2em] h-[1.2em]" />
+            </Link>
+
             {userLoggedIn ? (
               <div>
                 <Link href={"#"} className="nav__button">

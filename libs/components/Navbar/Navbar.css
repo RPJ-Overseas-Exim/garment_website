@@ -54,6 +54,7 @@ nav {
   width: 70%;
   justify-content: space-between;
   align-items: center;
+  transition: all 0.8s ease-in-out;
 }
 
 .menu__close-button {
@@ -100,10 +101,21 @@ nav {
   align-items: center;
 }
 
+.nav__buttons div {
+  display: flex;
+  gap: 0.3rem;
+  align-items: center;
+}
+
 .nav__button {
   background-color: var(--bg-light);
   padding: 0.2em;
   border-radius: 5px;
+  width: 2.5em;
+  height: 2.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .nav__button-icon {
@@ -182,7 +194,7 @@ nav {
 
   .nav__buttons {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 20px;
     font-size: 1.2rem;
   }
@@ -194,6 +206,7 @@ nav {
 
   .nav__button {
     background-color: transparent;
+    color: white;
   }
 
   .nav__button-icon {
