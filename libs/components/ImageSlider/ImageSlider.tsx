@@ -4,6 +4,7 @@ import type { sliderImages } from "../../utils/customTypes";
 import "./ImageSlider.css";
 import { useState, useEffect } from "react";
 import { RiArrowLeftWideFill, RiArrowRightWideFill } from "react-icons/ri";
+import Link from "next/link";
 
 export default function ImageSlider({ images }: { images: sliderImages[] }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -57,7 +58,6 @@ export default function ImageSlider({ images }: { images: sliderImages[] }) {
         })}
       </div>
 
-      <div className="slider__content"></div>
       <div className="slider__buttons">
         <button
           className="slider__button slider__button--left"
@@ -73,19 +73,29 @@ export default function ImageSlider({ images }: { images: sliderImages[] }) {
         </button>
       </div>
 
+      <div className="slider__content">
+        <p>T-Shirt / Tops</p>
+        <h1>Monsoon Value Pack</h1>
+        <h4>cool / colorful / comfy</h4>
+        <Link className="shop-now--button" href="/">
+          Shop Now
+        </Link>
+      </div>
+
       <div className="progress-bar--outer">
         <div className="progress-bar--inner">
           {images.map((_, index) => {
             return (
-              <div
+              <button
                 className={
                   `progress-bar__candle progress-bar-candle${index}` +
                   (currentImageIndex === index
                     ? " progress-bar__candle-active"
                     : "")
                 }
+                onClick={() => setCurrentImageIndex(index)}
                 key={index}
-              ></div>
+              ></button>
             );
           })}
         </div>
