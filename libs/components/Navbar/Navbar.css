@@ -16,6 +16,7 @@ nav {
 
 /* nav logo element */
 .nav__logo-link {
+  font-family: var(--logo-font);
   font-weight: 900;
   font-size: 1.5em;
   letter-spacing: 110%;
@@ -218,7 +219,7 @@ nav {
   }
   .signup-button {
     color: white;
-    border: 1px solid var(--border-regular);
+    border: 1px solid white;
   }
 
   .showMenu {

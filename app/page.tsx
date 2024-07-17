@@ -1,4 +1,5 @@
 import HeroSection from "@/libs/components/HeroSection/HeroSection";
+import NewArrival from "@/libs/components/NewArrival/NewArrival";
 import FeaturedSales from "./_components/FeaturedSales/FeaturedSales";
 
 export default function Home() {
@@ -6,6 +7,7 @@ export default function Home() {
     <main>
       <HeroSection />
       <FeaturedSales />
+      <NewArrival />
     </main>
   );
 }
