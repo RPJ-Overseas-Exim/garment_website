@@ -4,7 +4,7 @@ const config = {
   plugins: {
     "postcss-import": {},
     "@csstools/postcss-global-data": {
-      files: ["./libs/utils/styles/*.css"],
+      files: ["./libs/utils/styles/breakpoints.css"],
     },
     tailwindcss: {},
     cssnano: {},
