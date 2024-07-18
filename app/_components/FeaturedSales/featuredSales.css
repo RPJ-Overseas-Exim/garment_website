@@ -1,9 +1,33 @@
 .featured-sales {
   gap: 2rem;
-  margin-top: 4rem;
+  margin-block: 2rem;
 }
 
 .featured-sales--card {
-  width: 50%;
+  width: 100%;
   min-height: 18rem;
+  background-repeat: no-repeat;
+  background-position: 70%;
+}
+
+.featured-sales__title {
+  margin-top: 0.75em;
+}
+
+.featured-sales__heading {
+  font-weight: bolder;
+}
+
+.featured-sales__link {
+  font-weight: bold;
+  display: inline-block;
+  border-bottom: 1px solid white;
+  margin-top: 2em;
+}
+
+@media only screen and (--viewport-medium) {
+  .featured-sales--card {
+    width: 50%;
+    background-position: right top;
+  }
 }

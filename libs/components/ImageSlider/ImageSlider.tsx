@@ -73,13 +73,15 @@ export default function ImageSlider({ images }: { images: sliderImages[] }) {
         </button>
       </div>
 
-      <div className="slider__content">
-        <p>T-Shirt / Tops</p>
-        <h1>Monsoon Value Pack</h1>
-        <h4>cool / colorful / comfy</h4>
-        <Link className="shop-now--button" href="/">
-          Shop Now
-        </Link>
+      <div className="slider__content-wrapper">
+        <div className="slider__content">
+          <p>T-Shirt / Tops</p>
+          <h1>Monsoon Value Pack</h1>
+          <h4>cool / colorful / comfy</h4>
+          <Link className="shop-now--button" href="/">
+            Shop Now
+          </Link>
+        </div>
       </div>
 
       <div className="progress-bar--outer">

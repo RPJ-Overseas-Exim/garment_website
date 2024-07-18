@@ -2,6 +2,22 @@
   position: relative;
 }
 
+.slider__images {
+  position: relative;
+  z-index: 0;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 2;
+  }
+}
+
 .slider__image {
   width: 100%;
   aspect-ratio: 16 / 9;
@@ -21,6 +37,7 @@
   width: 100%;
   height: 100%;
   justify-content: space-between;
+  z-index: 1;
 }
 
 .slider__button {
@@ -37,9 +54,9 @@
 
 .progress-bar--outer {
   position: absolute;
-  /* bottom: 3%; */
-  bottom: 10%;
+  bottom: 7%;
   width: 100%;
+  z-index: 1;
 }
 
 .progress-bar--inner {
@@ -62,32 +79,43 @@
   opacity: 1;
 }
 
-.slider__content {
+.slider__content-wrapper {
   position: absolute;
-  top: 20%;
+  top: 0;
+  height: 100%;
+  align-items: center;
   left: 10%;
   display: flex;
-  flex-direction: column;
+  width: 30%;
+}
+
+.slider__content {
   color: white;
   font-size: var(--text-lg);
-  width: 30%;
+  z-index: 2;
 
   & h1 {
-    font-size: 3.5rem;
+    font-size: var(--text-lg);
     line-height: 1.3em;
     font-weight: bold;
     margin-block: 0.3em;
   }
+
+  & h4,
+  p {
+    font-size: var(--text-xs);
+  }
 }
 
 .shop-now--button {
-  padding: 0.75em 3em;
+  padding: 0.5em 1em;
   border-radius: 0.5em;
   background-color: var(--bg-light);
   color: var(--text-dark);
-  font-size: var(--text-sm);
+  font-size: var(--text-2xs);
   width: fit-content;
   font-weight: bold;
+  display: inline-block;
   margin-top: 2em;
   transition: all 0.2s linear;
 }
@@ -105,13 +133,20 @@
 }
 
 @media only screen and (--viewport-medium) {
-  .slider__image {
-    height: 100%;
+  .slider__content {
+    & h1 {
+      font-size: 3.5rem;
+    }
+
+    & h4,
+    p {
+      font-size: var(--text-lg);
+    }
   }
 
-  .slider__image-container {
-    width: 100vw;
-    height: calc(100vh - 3.5em);
+  .shop-now--button {
+    padding: 0.75em 3em;
+    font-size: var(--text-sm);
   }
 
   .slider__button {
@@ -123,5 +158,16 @@
     height: 7px;
     padding: 0;
     margin: 0;
+  }
+}
+
+@media only screen and (--viewport-xlarge) {
+  .slider__image {
+    height: 100%;
+  }
+
+  .slider__image-container {
+    width: 100vw;
+    height: calc(100vh - 3.5em);
   }
 }

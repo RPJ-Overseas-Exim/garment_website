@@ -3,7 +3,7 @@ import { Poppins, Open_Sans, Shrikhand } from "next/font/google";
 export const poppins = Poppins({
   subsets: ["latin"],
   variable: "--heading-font",
-  weight: ["700", "900"],
+  weight: ["400", "700", "900"],
 });
 
 export const openSans = Open_Sans({
