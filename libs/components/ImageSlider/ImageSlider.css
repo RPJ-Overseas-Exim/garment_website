@@ -95,7 +95,7 @@
   z-index: 2;
 
   & h1 {
-    font-size: var(--text-lg);
+    font-size: clamp(var(--text-base), 5vw, 3.5rem);
     line-height: 1.3em;
     font-weight: bold;
     margin-block: 0.3em;
@@ -103,7 +103,7 @@
 
   & h4,
   p {
-    font-size: var(--text-xs);
+    font-size: clamp(var(--text-xs), 2vw, var(--text-lg));
   }
 }
 
@@ -133,17 +133,6 @@
 }
 
 @media only screen and (--viewport-medium) {
-  .slider__content {
-    & h1 {
-      font-size: 3.5rem;
-    }
-
-    & h4,
-    p {
-      font-size: var(--text-lg);
-    }
-  }
-
   .shop-now--button {
     padding: 0.75em 3em;
     font-size: var(--text-sm);
