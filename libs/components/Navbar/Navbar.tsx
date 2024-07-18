@@ -9,7 +9,7 @@ import { IoMdClose } from "react-icons/io";
 import { useState } from "react";
 
 export default function Navbar() {
-  const [userLoggedIn, setUserLoggedIn] = useState(false);
+  const [userLoggedIn, setUserLoggedIn] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   function openMenu() {
