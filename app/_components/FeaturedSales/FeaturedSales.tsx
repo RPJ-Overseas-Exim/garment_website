@@ -8,14 +8,14 @@ export default function FeaturedSales() {
       title: "High Coziness",
       discount: "30%",
       link: "/",
-      image: "/assets/images/slider-Image1.jpg",
+      image: "/assets/images/featuredSales_card1.png",
     },
     {
-      heading: "beyound presents",
+      heading: "Beyoung Presents",
       title: "Breezy Summer Style",
       discount: "50%",
       link: "/",
-      image: "/assets/images/slider-Image2.jpg",
+      image: "/assets/images/featuredSales_card2.png",
     },
   ];
   return (
@@ -27,12 +27,16 @@ export default function FeaturedSales() {
             style={{ backgroundImage: `url(${card.image})` }}
             key={index}
           >
-            <p className="featured-salees__heading">{card.heading}</p>
-            <h3 className="card__title">{card.title}</h3>
-            <p className="card__discount">UPTO {card.discount} OFF</p>
-            <Link href={card.link} className="featured-sales__link">
-              Explore Items
-            </Link>
+            <div className="card__content">
+              <p className="featured-sales__heading">{card.heading}</p>
+              <h3 className="card__title featured-sales__title">
+                {card.title}
+              </h3>
+              <p className="card__discount">UPTO {card.discount} OFF</p>
+              <Link href={card.link} className="featured-sales__link">
+                Explore Items
+              </Link>
+            </div>
           </div>
         );
       })}
