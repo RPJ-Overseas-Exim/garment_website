@@ -23,7 +23,7 @@ export default function NewArrival() {
   ];
 
   return (
-    <div className="small-slider">
+    <div className="small-slider container">
       <h3 className="small-slider__title">
         <span className="small-slider__title__block"></span> New Arrival
       </h3>

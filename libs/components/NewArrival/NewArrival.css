@@ -1,5 +1,5 @@
 .small-slider {
-  margin: 25px 0;
+  margin: 25px auto;
   display: flex;
   flex-direction: column;
 }
@@ -12,12 +12,12 @@
 .small-slider__title {
   font-size: 2rem;
   font-weight: 900;
-  width: 95%;
+  width: 100%;
   margin: auto;
 }
 
 .small-slider__slides {
-  padding: 1rem;
+  padding: 1rem 0;
   margin: auto;
 }
 
@@ -33,8 +33,8 @@
   font-weight: 600;
 }
 
-@media screen and (--viewport-medium) {
+/* @media screen and (--viewport-medium) {
   .small-slider__slides {
     width: 90%;
   }
-}
+} */

@@ -20,7 +20,12 @@ export default function Slider({
   photos: sliderImages[];
 }) {
   return (
-    <Carousel>
+    <Carousel
+      opts={{
+        align: "start",
+      }}
+      className="w-full max-w-[85%] m-[auto]"
+    >
       {/* element which contain the slides */}
       <CarouselContent className={classname}>
         {/* map the element or photos to a slide */}
@@ -46,8 +51,8 @@ export default function Slider({
           </CarouselItem>
         ))}
       </CarouselContent>
-      {/* <CarouselPrevious />
-      <CarouselNext /> */}
+      <CarouselPrevious />
+      <CarouselNext />
     </Carousel>
   );
 }
