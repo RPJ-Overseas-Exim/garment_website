@@ -1,7 +1,7 @@
 import HeroSection from "@/libs/components/HeroSection/HeroSection";
-import NewArrival from "@/libs/components/NewArrival/NewArrival";
+import NewArrival from "@/app/_components/NewArrival/NewArrival";
 import FeaturedSales from "./_components/FeaturedSales/FeaturedSales";
-import Footer from "@/libs/components/Footer/Footer";
+import Objective from "./_components/Objective/Objective";
 
 export default function Home() {
   return (
@@ -9,6 +9,7 @@ export default function Home() {
       <HeroSection />
       <FeaturedSales />
       <NewArrival />
+      <Objective />
     </main>
   );
 }

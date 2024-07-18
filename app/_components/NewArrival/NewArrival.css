@@ -1,0 +1,36 @@
+.small-slider {
+  margin: 25px auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.small-slider__title__block {
+  border: 4px solid var(--text-purple);
+  margin-right: 20px;
+  border-radius: 20px;
+}
+
+.small-slider__title {
+  font-size: 2rem;
+  font-weight: 700;
+  width: 100%;
+  margin: auto;
+  color: var(--text-dark);
+}
+
+.small-slider__slides {
+  padding: 1rem 0;
+  margin: auto;
+}
+
+.small-carousel__slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.small-carousel__text {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
