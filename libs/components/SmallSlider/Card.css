@@ -1,0 +1,17 @@
+.small-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.small-card__image {
+  height: 80%;
+}
+
+.small-card__title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}

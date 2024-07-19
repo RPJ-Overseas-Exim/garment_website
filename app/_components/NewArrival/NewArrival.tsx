@@ -5,19 +5,19 @@ import type { sliderImages } from "@/libs/utils/customTypes";
 export default function NewArrival() {
   const photos: sliderImages[] = [
     {
-      url: "/assets/images/small slider/photo.webp",
+      url: "/assets/images/small slider/photo_4.webp",
       alt: "Full Sleeve",
     },
     {
-      url: "/assets/images/small slider/photo_2.webp",
+      url: "/assets/images/small slider/photo_3.webp",
       alt: "Urban Shirts",
     },
     {
-      url: "/assets/images/small slider/photo_3.webp",
+      url: "/assets/images/small slider/photo_2.webp",
       alt: "Active T-Shirts",
     },
     {
-      url: "/assets/images/small slider/photo_4.webp",
+      url: "/assets/images/small slider/photo.webp",
       alt: "Knitted Joggers",
     },
   ];

@@ -32,7 +32,7 @@ export default function Slider({
         {photos.map((photo) => (
           <CarouselItem
             key={`p${photo.url}`}
-            className={`md:basis-1/2 lg:basis-1/3`}
+            className={`sm:basis-1/2 lg:basis-1/3`}
           >
             <Link
               href={"#"}
