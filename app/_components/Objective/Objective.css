@@ -27,10 +27,11 @@
 
 .objective {
   width: 80%;
+  height: 90%;
 
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  justify-content: space-around;
 }
 
 .objective__title {
@@ -66,7 +67,17 @@
   background-color: #fff;
 }
 
+@media screen and (--viewport-small) {
+  .objective {
+    height: 70%;
+  }
+}
+
 @media screen and (--viewport-medium) {
+  .objective {
+    height: 60%;
+  }
+
   .objective-container {
     flex-direction: row;
     height: 500px;
