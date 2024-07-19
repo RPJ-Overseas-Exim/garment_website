@@ -34,7 +34,7 @@ export default function FeaturedSales() {
                 {card.title}
               </h3>
               <p className="card__discount">UPTO {card.discount} OFF</p>
-              <Link href={card.link} className="featured-sales__link">
+              <Link href={card.link} className="sale__link">
                 Explore Items
               </Link>
             </div>

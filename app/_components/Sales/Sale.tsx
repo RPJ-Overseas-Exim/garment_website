@@ -1,5 +1,6 @@
 import Link from "next/link";
 import "./Sale.css";
+import { IoIosArrowRoundDown } from "react-icons/io";
 
 export default function Sale() {
   const saleCards = [
@@ -65,16 +66,23 @@ export default function Sale() {
                 alignItems: card.align,
               }}
             >
+              <div className="filter-black"></div>
               <div
-                className={`card__content ${
-                  card.align === "end" ? "text-right" : ""
+                className={`card__content sale--card__content ${
+                  card.align === "end" ? " text-right" : ""
                 }`}
+                style={{ alignItems: card.align }}
               >
                 <h3 className="card__title sale__title">{card.title}</h3>
                 <p className="sale__subTitle">{card.subTitle}</p>
-                <p className="card__discount">UPTO {card.discount} OFF</p>
-                <Link href={card.link} className="sale__link">
-                  Explore Items
+                <p className="card__discount sale__discount">
+                  UPTO {card.discount} OFF
+                </p>
+
+                <IoIosArrowRoundDown className="text-6xl mx-7" />
+
+                <Link href={card.link} className="sale__shop-now">
+                  Shop Now
                 </Link>
               </div>
             </div>

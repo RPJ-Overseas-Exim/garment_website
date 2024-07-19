@@ -9,8 +9,7 @@ import {
 import type { sliderImages } from "@/libs/utils/customTypes";
 import Image from "next/image";
 import Link from "next/link";
-
-import React from "react";
+import "./Slider.css";
 
 export default function Slider({
   classname,
@@ -24,7 +23,7 @@ export default function Slider({
       opts={{
         align: "start",
       }}
-      className="w-full max-w-[85%]"
+      className="small-carousel"
     >
       {/* element which contain the slides */}
       <CarouselContent className={classname}>
