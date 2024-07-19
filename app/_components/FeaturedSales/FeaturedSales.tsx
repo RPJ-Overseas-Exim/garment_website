@@ -8,14 +8,14 @@ export default function FeaturedSales() {
       title: "High Coziness",
       discount: "30%",
       link: "/",
-      image: "/assets/images/featuredSales_card1.png",
+      image: "/assets/images/featuredSales_card1.webp",
     },
     {
       heading: "Beyoung Presents",
       title: "Breezy Summer Style",
       discount: "50%",
       link: "/",
-      image: "/assets/images/featuredSales_card2.png",
+      image: "/assets/images/featuredSales_card2.webp",
     },
   ];
   return (

@@ -47,7 +47,6 @@ export default function ImageSlider({ images }: { images: sliderImages[] }) {
                 height={0}
                 sizes="100%"
                 className="slider__image"
-                priority={true}
                 style={{
                   transform: `translateX(${-currentImageIndex * 100}%)`,
                   objectPosition: image.position,

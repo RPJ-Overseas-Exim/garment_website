@@ -8,7 +8,7 @@ export default function Sale() {
       subTitle: "Dress up in summer vibe",
       discount: "50%",
       link: "/",
-      image: "/assets/images/sale/image_1.png",
+      image: "/assets/images/sale/image_1.webp",
       align: "start",
     },
     {
@@ -16,7 +16,7 @@ export default function Sale() {
       subTitle: "New Designs Every Week",
       discount: "40%",
       link: "/",
-      image: "/assets/images/sale/image_2.png",
+      image: "/assets/images/sale/image_2.webp",
       align: "end",
     },
     {
@@ -24,7 +24,7 @@ export default function Sale() {
       subTitle: "Move with Style and Comfort",
       discount: "50%",
       link: "/",
-      image: "/assets/images/sale/image_3.png",
+      image: "/assets/images/sale/image_3.webp",
       align: "end",
     },
     {
@@ -32,7 +32,7 @@ export default function Sale() {
       subTitle: "Live in Comfort",
       discount: "60%",
       link: "/",
-      image: "/assets/images/sale/image_4.png",
+      image: "/assets/images/sale/image_4.webp",
       align: "end",
     },
     {
@@ -40,7 +40,7 @@ export default function Sale() {
       subTitle: "Street Style icon",
       discount: "60%",
       link: "/",
-      image: "/assets/images/sale/image_5.png",
+      image: "/assets/images/sale/image_5.webp",
       align: "end",
     },
   ];

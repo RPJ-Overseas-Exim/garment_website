@@ -11,7 +11,7 @@
 }
 
 .objective-container .objective-content {
-  background-image: url("/assets/images/Objective/leaf_image.svg");
+  background-image: url("/assets/images/Objective/leaf_image.webp");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -44,7 +44,7 @@
 }
 
 .objective-container .right {
-  background-image: url("/assets/images/Objective/objective_image2.svg");
+  background-image: url("/assets/images/Objective/objective_image2.webp");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
