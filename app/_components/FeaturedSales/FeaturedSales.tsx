@@ -18,6 +18,7 @@ export default function FeaturedSales() {
       image: "/assets/images/featuredSales_card2.webp",
     },
   ];
+
   return (
     <section id="featured-sales" className="container cards featured-sales">
       {featuredSalesCards.map((card, index) => {

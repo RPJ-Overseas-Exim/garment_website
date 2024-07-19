@@ -24,7 +24,7 @@ export default function Slider({
       opts={{
         align: "start",
       }}
-      className="w-full max-w-[85%] m-[auto]"
+      className="w-full max-w-[85%]"
     >
       {/* element which contain the slides */}
       <CarouselContent className={classname}>
