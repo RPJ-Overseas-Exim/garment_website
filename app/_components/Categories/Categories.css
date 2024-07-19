@@ -1,0 +1,53 @@
+.categories-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  margin: 2rem auto;
+}
+
+.men-section,
+.women-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+
+.categories-container__title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.card-container__card {
+  width: 48%;
+}
+
+.men-section .card-container__card:last-child {
+  display: none;
+}
+
+@media screen and (--viewport-small) {
+  .card-container__card {
+    width: 30%;
+  }
+
+  .men-section .card-container__card:last-child {
+    display: block;
+  }
+}
+
+@media screen and (--viewport-medium) {
+  .card-container__card {
+    width: 24%;
+  }
+
+  .men-section .card-container__card:last-child {
+    display: none;
+  }
+}
