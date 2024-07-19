@@ -1,5 +1,5 @@
 .sale {
-  margin-block: 2rem;
+  margin-block: 4rem;
   display: grid;
   grid-template-areas:
     "a"
