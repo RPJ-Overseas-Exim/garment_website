@@ -1,5 +1,5 @@
 .small-slider {
-  margin: 4rem auto;
+  margin: 4em auto;
   display: flex;
   flex-direction: column;
 }
@@ -11,7 +11,7 @@
 }
 
 .small-slider__title {
-  font-size: 2rem;
+  font-size: var(--text-lg);
   font-weight: 700;
   width: 100%;
   margin: auto;
@@ -19,8 +19,7 @@
 }
 
 .small-slider__slides {
-  padding: 1rem 0;
-  margin: auto;
+  margin-inline: auto;
 }
 
 .small-carousel__slide {
@@ -33,4 +32,10 @@
 .small-carousel__text {
   font-size: 1.5rem;
   font-weight: 600;
+}
+
+@media screen and (--viewport-medium) {
+  .small-slider__title {
+    font-size: var(--text-xl);
+  }
 }

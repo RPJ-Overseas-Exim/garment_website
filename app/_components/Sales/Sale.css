@@ -3,7 +3,7 @@
 }
 
 .sale {
-  margin-block: 4rem;
+  margin-top: 2em;
   display: grid;
   grid-template-areas:
     "a"
@@ -51,19 +51,20 @@
   font-weight: 700;
 }
 
-.shop-now--button.sale__shop-now {
+.sale__shop-now {
   padding: 0.5em 1.5em;
   background-color: transparent;
   border: 1px solid white;
+  border-radius: 0.6em;
   color: white;
   font-weight: 400;
   font-size: var(--text-sm);
   text-transform: uppercase;
 }
 
-.shop-now--button.sale__shop-now :hover,
-.shop-now--button.sale__shop-now :focus,
-.shop-now--button.sale__shop-now :active {
+.sale__shop-now :hover,
+.sale__shop-now :focus,
+.sale__shop-now :active {
   background-color: transparent;
 }
 

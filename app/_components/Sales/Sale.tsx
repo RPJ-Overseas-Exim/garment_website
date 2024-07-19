@@ -81,10 +81,7 @@ export default function Sale() {
 
                 <IoIosArrowRoundDown className="text-6xl mx-7" />
 
-                <Link
-                  href={card.link}
-                  className="shop-now--button sale__shop-now"
-                >
+                <Link href={card.link} className="sale__shop-now">
                   Shop Now
                 </Link>
               </div>
