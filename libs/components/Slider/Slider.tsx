@@ -22,6 +22,7 @@ export default function Slider({
     <Carousel
       opts={{
         align: "start",
+        loop: true,
       }}
       className="small-carousel"
     >
