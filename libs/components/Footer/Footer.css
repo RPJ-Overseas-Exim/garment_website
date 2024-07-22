@@ -21,11 +21,45 @@
   font-size: 1.5rem;
 }
 
-.footer__line {
-  width: 100%;
-  border: 1px solid white;
-}
-
 .footer__bottom {
   text-align: center;
+}
+
+.footer__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  & h4 {
+    font-size: var(--text-lg);
+    font-weight: bolder;
+    margin-bottom: 0.875em;
+  }
+
+  & li {
+    font-size: var(--text-sm);
+    color: var(--text-light);
+    margin-bottom: 1em;
+  }
+}
+
+.footer__contact {
+  display: flex;
+  gap: 1em;
+
+  & li {
+    padding: 0.3em;
+    border-radius: 100%;
+    color: var(--footer-bg-color);
+    font-size: var(--text-lg);
+    background-color: white;
+  }
+}
+
+@media screen and (--viewport-medium) {
+  .footer__nav {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 70%;
+    gap: 0;
+  }
 }
