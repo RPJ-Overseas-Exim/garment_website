@@ -1,9 +1,14 @@
+import dynamic from "next/dynamic";
 import HeroSection from "@/libs/components/HeroSection/HeroSection";
-import NewArrival from "@/app/_components/NewArrival/NewArrival";
-import FeaturedSales from "./_components/FeaturedSales/FeaturedSales";
-import Objective from "./_components/Objective/Objective";
-import Sale from "./_components/Sales/Sale";
-import Categories from "./_components/Categories/Categories";
+const NewArrival = dynamic(
+  () => import("@/app/_components/NewArrival/NewArrival")
+);
+const FeaturedSales = dynamic(
+  () => import("./_components/FeaturedSales/FeaturedSales")
+);
+const Objective = dynamic(() => import("./_components/Objective/Objective"));
+const Sale = dynamic(() => import("./_components/Sales/Sale"));
+const Categories = dynamic(() => import("./_components/Categories/Categories"));
 
 export default function Home() {
   return (

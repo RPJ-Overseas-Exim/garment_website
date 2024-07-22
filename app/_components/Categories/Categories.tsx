@@ -65,7 +65,7 @@ export default function Categoies() {
     <section className="categories-container container">
       <div className="men-section">
         {/* category title section*/}
-        <h3 className="categories-container__title">
+        <h3 className="small-slider__title">
           <span className="small-slider__title__block"></span> Men Categories
         </h3>
 
@@ -86,7 +86,7 @@ export default function Categoies() {
 
       <div className="women-section">
         {/* category title section*/}
-        <h3 className="categories-container__title">
+        <h3 className="small-slider__title">
           <span className="small-slider__title__block"></span> Women Categories
         </h3>
 
