@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Navbar from "@/libs/components/Navbar/Navbar";
-import Footer from "@/libs/components/Footer/Footer";
 import { poppins, openSans, shrikhand } from "@/libs/utils/fonts";
 
 export const metadata: Metadata = {
@@ -19,9 +17,7 @@ export default function RootLayout({
       <body
         className={`${openSans.variable} ${poppins.variable} ${shrikhand.variable}`}
       >
-        <Navbar />
         {children}
-        <Footer />
       </body>
     </html>
   );

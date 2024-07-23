@@ -4,11 +4,13 @@ const NewArrival = dynamic(
   () => import("@/app/_components/NewArrival/NewArrival")
 );
 const FeaturedSales = dynamic(
-  () => import("./_components/FeaturedSales/FeaturedSales")
+  () => import("../_components/FeaturedSales/FeaturedSales")
 );
-const Objective = dynamic(() => import("./_components/Objective/Objective"));
-const Sale = dynamic(() => import("./_components/Sales/Sale"));
-const Categories = dynamic(() => import("./_components/Categories/Categories"));
+const Objective = dynamic(() => import("../_components/Objective/Objective"));
+const Sale = dynamic(() => import("../_components/Sales/Sale"));
+const Categories = dynamic(
+  () => import("../_components/Categories/Categories")
+);
 
 export default function Home() {
   return (
