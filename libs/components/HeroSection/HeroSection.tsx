@@ -19,7 +19,7 @@ export default function HeroSection() {
     },
   ];
   return (
-    <section id="hero">
+    <section id="hero" className="w-[100vw]">
       <ImageSlider images={images} />
     </section>
   );
