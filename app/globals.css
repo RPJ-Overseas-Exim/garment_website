@@ -16,8 +16,6 @@
   body {
     overflow-x: hidden;
     font-family: var(--body-font);
-    display: grid;
-    min-height: 100dvh;
   }
 
   h1,
