@@ -21,7 +21,7 @@ export default function Navbar() {
   }
 
   return (
-    <nav>
+    <nav className="primary-nav">
       <div className="container">
         {/* Logo element */}
         <h2 className="nav__logo">

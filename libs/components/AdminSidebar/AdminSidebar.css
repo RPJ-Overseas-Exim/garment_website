@@ -3,6 +3,7 @@
   bottom: 0;
   width: 100%;
   background-color: white;
+  border-top: 1px solid var(--text-gray);
 }
 
 .sidebar__title {
@@ -41,6 +42,7 @@
   .admin-sidebar {
     position: relative;
     width: 20%;
+    border: 0;
     border-right: 1px solid var(--text-gray);
   }
 
