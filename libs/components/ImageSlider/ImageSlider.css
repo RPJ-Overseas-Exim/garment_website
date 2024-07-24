@@ -21,6 +21,7 @@
 .slider__image {
   width: 100%;
   aspect-ratio: 16 / 9;
+  min-height: 25vh;
   object-fit: cover;
   transition: all 0.3s;
 }

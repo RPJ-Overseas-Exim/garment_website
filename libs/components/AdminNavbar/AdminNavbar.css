@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 120px;
+  padding: 1em 0;
 }
 
 .admin-navbar__nav {
@@ -11,6 +11,11 @@
   align-items: center;
   justify-content: space-between;
   width: 90%;
+
+  & h1 {
+    font-size: var(--text-2xl);
+    font-weight: bold;
+  }
 }
 
 .admin-navbar-options {
@@ -23,6 +28,7 @@
 }
 
 .admin-navbar-options__image {
+  position: relative;
   width: 30px;
   height: 30px;
 }
@@ -35,6 +41,7 @@
 /* .dropdown css */
 .dropdown {
   position: relative;
+  display: flex;
 }
 
 .dropdown-menu {
@@ -45,12 +52,15 @@
   border-radius: 0.5rem;
   padding: 0.4rem;
   display: none;
+  background-color: white;
 
   flex-direction: column;
   gap: 0.2rem;
   max-height: 7rem;
   overflow-y: auto;
   width: max-content;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 
   transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
   opacity: 0;
@@ -58,11 +68,16 @@
   pointer-events: none;
 }
 
+.dropdown-menu::-webkit-scrollbar {
+  display: none;
+}
+
 .dropdown-menu > span {
   display: flex;
   align-items: center;
   gap: 0.2rem;
 }
+
 .dropdown-menu > hr {
   width: 100%;
   border: 1px solid var(--text-regular);
