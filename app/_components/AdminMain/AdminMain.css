@@ -14,7 +14,7 @@
 }
 
 #dashboard-home > * {
-  height: 100px;
+  min-height: 100px;
   background-color: var(--bg-light);
   border-radius: 0.5em;
 }
