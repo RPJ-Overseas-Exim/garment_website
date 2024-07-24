@@ -1,3 +1,9 @@
+import AdminMain from "@/app/_components/AdminMain/AdminMain";
+
 export default function page() {
-  return <div>Dashboard</div>;
+  return (
+    <>
+      <AdminMain />
+    </>
+  );
 }

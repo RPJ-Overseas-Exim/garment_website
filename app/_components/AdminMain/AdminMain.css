@@ -1,0 +1,49 @@
+#dashboard-home {
+  display: grid;
+  grid-template-areas:
+    "a"
+    "b"
+    "c"
+    "d"
+    "e";
+  gap: 1em;
+  width: 90%;
+  margin-inline: auto;
+  overflow-y: auto;
+  padding: 1rem;
+  padding-bottom: calc(70.36px + 2em);
+}
+
+#dashboard-home > * {
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.3);
+  height: 100px;
+}
+
+#today-sale {
+  grid-area: a;
+}
+
+#visitor-insight {
+  grid-area: b;
+}
+
+#top-products {
+  grid-area: c;
+}
+
+#target-vs-reality {
+  grid-area: d;
+}
+
+#total-revenue {
+  grid-area: e;
+}
+
+@media screen and (--viewport-medium) {
+  #dashboard-home {
+    grid-template-areas:
+      "a a a b b"
+      "c c c c d"
+      "e e e e e";
+  }
+}
