@@ -8,11 +8,13 @@ export default function layout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <div className="flex max-h-dvh">
+    <div className="flex h-screen">
       <AdminSidebar />
       <div className="w-full lg:w-[80%]">
         <AdminNavbar />
-        <main className="overflow-y-auto">{children}</main>
+        <main className="overflow-y-auto h-[calc(100dvh - 140.36px)] md:h-[calc(100vh-75px)]">
+          {children}
+        </main>
       </div>
     </div>
   );
