@@ -1,6 +1,5 @@
 #today-sale {
   background-color: var(--bg-light);
-  outline: 1px solid var(--text-gray);
   height: max-content;
 
   display: flex;
@@ -46,6 +45,7 @@
 
 .bottom-section {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 1em;
@@ -65,7 +65,7 @@
   font-size: var(--text-sm);
   color: var(--text-dark);
 
-  width: 47%;
+  width: 100%;
 }
 
 .data {
@@ -110,8 +110,12 @@
   color: #4079ed;
 }
 
-@media screen and (--viewport-large) {
+@media screen and (--viewport-small) {
+  .bottom-section {
+    flex-direction: row;
+  }
+
   .admin-card {
-    width: 23%;
+    width: 47%;
   }
 }
