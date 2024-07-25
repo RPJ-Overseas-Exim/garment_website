@@ -57,12 +57,9 @@ export default function BarChartMultiple() {
               axisLine={false}
               tickFormatter={(value) => value.slice(0, 3)}
             />
-            <ChartTooltip
-              cursor={false}
-              content={<ChartTooltipContent indicator="dashed" />}
-            />
-            <Bar dataKey="desktop" fill="var(--color-desktop)" radius={4} />
-            <Bar dataKey="mobile" fill="var(--color-mobile)" radius={4} />
+            <ChartTooltip content={<ChartTooltipContent />} />
+            <Bar dataKey="desktop" fill="#0095FF" radius={4} />
+            <Bar dataKey="mobile" fill="#00E096" radius={4} />
           </BarChart>
         </ChartContainer>
       </CardContent>
@@ -74,7 +71,13 @@ export default function BarChartMultiple() {
           >
             <FaBagShopping />
           </p>
-          <p>Reality</p>
+          <p className="font-semibold">Reality</p>
+          <p
+            className="text-base font-semibold ml-4"
+            style={{ color: "rgb(0, 149, 255)" }}
+          >
+            {chartData[chartData.length - 1].desktop}
+          </p>
         </div>
         <div className="flex items-center gap-2">
           <p
@@ -83,7 +86,13 @@ export default function BarChartMultiple() {
           >
             <TbTargetArrow />
           </p>
-          <p>Target</p>
+          <p className="font-semibold">Target</p>
+          <p
+            className="text-base font-semibold ml-4"
+            style={{ color: "rgb(0, 224, 150)" }}
+          >
+            {chartData[chartData.length - 1].mobile}
+          </p>
         </div>
       </CardFooter>
     </Card>

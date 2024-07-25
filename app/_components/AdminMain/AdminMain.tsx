@@ -11,8 +11,6 @@ export default function AdminMain() {
       <TopProducts />
       <TargetvsReality />
       <article id="total-revenue"></article>
-      <article id="total-revenue1"></article>
-      <article id="total-revenue2"></article>
     </section>
   );
 }
