@@ -19,7 +19,7 @@ export default function AdminSidebar() {
               (path === "/admin/dashboard" && "active--nav-item") || ""
             }
           >
-            <Link href="/" className="aside__nav-item">
+            <Link href="/admin/dashboard" className="aside__nav-item">
               <FaChartPie className="nav-item__active" /> <span>Dashboard</span>
             </Link>
           </li>
@@ -28,7 +28,7 @@ export default function AdminSidebar() {
               (path === "/admin/dashboard/orders" && "active--nav-item") || ""
             }
           >
-            <Link href="/" className="aside__nav-item">
+            <Link href="/admin/dashboard/orders" className="aside__nav-item">
               <FiShoppingCart /> <span>Orders</span>
             </Link>
           </li>
@@ -37,7 +37,7 @@ export default function AdminSidebar() {
               (path === "/admin/dashboard/sales" && "active--nav-item") || ""
             }
           >
-            <Link href="/" className="aside__nav-item">
+            <Link href="/admin/dashboard/sales" className="aside__nav-item">
               <FaChartLine /> <span>Sales Report</span>
             </Link>
           </li>
@@ -46,7 +46,7 @@ export default function AdminSidebar() {
               (path === "/admin/dashboard/products" && "active--nav-item") || ""
             }
           >
-            <Link href="/" className="aside__nav-item">
+            <Link href="/admin/dashboard/products" className="aside__nav-item">
               <FaBagShopping /> <span>Products</span>
             </Link>
           </li>

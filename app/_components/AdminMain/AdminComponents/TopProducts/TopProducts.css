@@ -4,14 +4,14 @@
   tr {
     display: grid;
     width: 100%;
-    grid-template-columns: 1.5rem 1fr 1fr 1fr;
+    grid-template-columns: auto 1fr 4rem 4rem;
     padding: 0.7em 0;
     border-bottom: 1px solid #d6d2d4;
     align-items: center;
-    justify-content: space-between;
+    justify-content: start;
     justify-items: start;
-    gap: 2rem;
-    padding-inline: 1.5rem;
+    gap: 1rem;
+    padding-inline: 0.2rem;
     font-size: var(--text-xs);
   }
   td {
@@ -51,7 +51,7 @@
 
 .top-products__sales {
   height: 2.25em;
-  width: 5em;
+  width: 4.5em;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -75,6 +75,9 @@
     tr {
       grid-template-columns: repeat(4, 8rem);
       grid-template-columns: 1.5rem 12rem 8rem 4.5rem;
+      justify-content: space-between;
+      gap: 2rem;
+      padding-inline: 1.5rem;
     }
   }
   .top-products__sales {
