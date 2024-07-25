@@ -1,10 +1,11 @@
+import AdminTodaySale from "./AdminComponents/AdminTodaySale/AdminTodaySale";
 import "./AdminMain.css";
 import TopProducts from "./AdminComponents/TopProducts/TopProducts";
 
 export default function AdminMain() {
   return (
     <section id="dashboard-home">
-      <article id="today-sale"></article>
+      <AdminTodaySale />
       <article id="visitor-insight"></article>
       <TopProducts />
       <article id="target-vs-reality"></article>

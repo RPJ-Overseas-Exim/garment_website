@@ -5,4 +5,11 @@ const dashColors = {
   lightOrange: "#FF8F0D",
 };
 
+export const dashColorsRgb = {
+  deepBlue: "0, 149, 255",
+  lightGreen: "0, 224, 150",
+  lavender: "136, 77, 255",
+  lightOrange: "255, 143, 13",
+};
+
 export default dashColors;
