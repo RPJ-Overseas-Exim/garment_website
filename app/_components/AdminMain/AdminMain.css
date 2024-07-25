@@ -17,6 +17,14 @@
   min-height: 100px;
   background-color: var(--bg-light);
   border-radius: 0.5em;
+  padding: 2em;
+}
+
+.dashboard-home__title {
+  font-size: var(--text-base);
+  font-weight: bolder;
+  margin-bottom: 0.5em;
+  color: var(--text-dark);
 }
 
 #today-sale {
@@ -33,6 +41,7 @@
 
 #target-vs-reality {
   grid-area: d;
+  padding: 0;
 }
 
 #total-revenue {
