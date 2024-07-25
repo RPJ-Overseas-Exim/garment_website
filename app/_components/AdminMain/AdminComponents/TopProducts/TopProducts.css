@@ -70,11 +70,23 @@
   }
 }
 
+@media only screen and (--viewport-small) {
+  .top-products tr {
+    grid-template-columns: 1.5rem 1fr 12rem 4.5rem;
+  }
+}
+
 @media only screen and (--viewport-medium) {
+  .top-products tr {
+    grid-template-columns: 1.5rem 1fr 6rem 4.5rem;
+  }
+}
+
+@media only screen and (--viewport-large) {
   .top-products {
     tr {
       grid-template-columns: repeat(4, 8rem);
-      grid-template-columns: 1.5rem 12rem 8rem 4.5rem;
+      grid-template-columns: 1.5rem 1fr 8rem 4.5rem;
       justify-content: space-between;
       gap: 2rem;
       padding-inline: 1.5rem;

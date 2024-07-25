@@ -7,12 +7,17 @@ import TotalRevenue from "./AdminComponents/TotalRevenue/TotalRevenue";
 
 export default function AdminMain() {
   return (
-    <section id="dashboard-home">
+    <section id="dashboard-home" className="dashboard-home">
       <AdminTodaySale />
       <VisiterInsight />
       <TopProducts />
       <TargetvsReality />
       <TotalRevenue />
+      <div
+        title="hidden"
+        aria-hidden="true"
+        className="dashboard-home__spacer"
+      ></div>
     </section>
   );
 }
