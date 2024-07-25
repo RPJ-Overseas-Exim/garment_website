@@ -14,7 +14,7 @@ export default function AdminTodaySale() {
       {/* top section */}
       <div className="today-sale-title">
         <span className="title-summary">
-          <h2 className="title dashboard-home__title">Today's Sales</h2>
+          <h2 className="title dashboard-home__title">{"Today's Sales"}</h2>
           <p className="title-description">Sales Summary</p>
         </span>
         <button className="title-button">
