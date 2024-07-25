@@ -39,6 +39,8 @@
   display: flex;
   align-items: center;
   gap: 0.4em;
+
+  font-size: 0.8rem;
 }
 
 /* .bottom-section css */
@@ -111,6 +113,10 @@
 }
 
 @media screen and (--viewport-small) {
+  .title-button {
+    font-size: 1rem;
+  }
+
   .bottom-section {
     flex-direction: row;
   }
