@@ -51,6 +51,7 @@
 
 #total-revenue {
   grid-area: e;
+  padding: 0;
 }
 
 @media screen and (--viewport-medium) {
