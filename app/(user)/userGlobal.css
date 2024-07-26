@@ -2,4 +2,5 @@ body {
   display: grid;
   min-height: 100dvh;
   position: relative;
+  grid-template-rows: auto 1fr auto;
 }

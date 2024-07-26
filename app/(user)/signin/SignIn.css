@@ -1,0 +1,64 @@
+.signin {
+  display: flex;
+  align-self: stretch;
+}
+
+.signin-image {
+  display: none;
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.signin-form {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+
+  padding-block: 3em;
+}
+
+.sigin-form__container {
+  max-width: 400px;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.form-title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--text-dark);
+}
+
+.form-label {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-regular);
+}
+
+.form-button {
+  background-color: var(--button-dark);
+  color: var(--bg-light);
+}
+
+.form-link > a {
+  font-weight: 600;
+  color: var(--text-purple);
+}
+
+@media screen and (--viewport-medium) {
+  .signin-image {
+    display: block;
+    width: 50%;
+  }
+
+  .signin-form {
+    width: 50%;
+  }
+}
