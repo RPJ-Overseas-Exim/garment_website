@@ -19,6 +19,7 @@ import { Input } from "@/components/ui/input";
 
 import Image from "next/image";
 import Link from "next/link";
+import PasswordInput from "@/libs/components/PasswordInput/PasswordInput";
 
 const formSchema = z.object({
   username: z.string().min(2).max(50),
@@ -54,7 +55,7 @@ export default function SignInForm() {
       </section>
 
       <section className="signin-form">
-        <div className="sigin-form__container">
+        <div className="signin-form__container">
           <div className="form-title">Sign-In</div>
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
@@ -82,9 +83,13 @@ export default function SignInForm() {
                   <FormItem>
                     <FormLabel className="form-label">Password</FormLabel>
                     <FormControl>
-                      <Input placeholder="Enter your password." {...field} />
+                      <PasswordInput<typeof field> field={field} />
                     </FormControl>
-                    {/* <FormDescription>Enter your password.</FormDescription> */}
+                    <FormDescription className="form-input-description">
+                      <Link href={"/reset"} className="forget-password">
+                        Forget your password
+                      </Link>
+                    </FormDescription>
                     <FormMessage />
                   </FormItem>
                 )}

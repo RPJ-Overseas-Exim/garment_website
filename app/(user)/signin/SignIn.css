@@ -22,7 +22,7 @@
   padding-block: 3em;
 }
 
-.sigin-form__container {
+.signin-form__container {
   max-width: 400px;
   width: 80%;
   display: flex;
@@ -36,6 +36,31 @@
   color: var(--text-dark);
 }
 
+.form-input {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  position: relative;
+}
+
+.eyeIcon {
+  font-size: 1.3rem;
+  cursor: pointer;
+  position: absolute;
+  right: 0.6em;
+}
+
+.form-input-description {
+  width: 100%;
+  color: var(--text-regular);
+}
+
+.forget-password {
+  width: 100%;
+  text-align: right;
+  color: var(--text-regular);
+}
+
 .form-label {
   font-size: 1rem;
   font-weight: 700;
@@ -47,7 +72,7 @@
   color: var(--bg-light);
 }
 
-.form-link > a {
+.form-link a {
   font-weight: 600;
   color: var(--text-purple);
 }

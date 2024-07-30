@@ -67,8 +67,9 @@ export default function ResetForm() {
                       <Input placeholder="Enter email." {...field} />
                     </FormControl>
                     <FormDescription className="form-input-description">
-                      Enter your email and we'll send you a link to reset your
-                      password.
+                      {
+                        "Enter your email and we'll send you a link to reset your password."
+                      }
                     </FormDescription>
                     <FormMessage />
                   </FormItem>

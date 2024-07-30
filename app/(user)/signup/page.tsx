@@ -23,7 +23,9 @@ import PasswordInput from "@/libs/components/PasswordInput/PasswordInput";
 
 const formSchema = z.object({
   username: z.string().min(2).max(50),
+  email: z.string().email(),
   password: z.string().min(8).max(16),
+  confirm_password: z.string().min(8).max(16),
 });
 
 export default function SignUpForm() {
@@ -31,7 +33,9 @@ export default function SignUpForm() {
     resolver: zodResolver(formSchema),
     defaultValues: {
       username: "",
+      email: "",
       password: "",
+      confirm_password: "",
     },
   });
 
@@ -46,7 +50,7 @@ export default function SignUpForm() {
       {/* Image section */}
       <section className="signup-image">
         <Image
-          src={"/assets/images/authentication/signInImg.webp"}
+          src={"/assets/images/authentication/signUpImg.webp"}
           alt="Sign-Up"
           width={0}
           height={0}
@@ -75,6 +79,21 @@ export default function SignUpForm() {
                 )}
               />
 
+              {/* email field */}
+              <FormField
+                control={form.control}
+                name="email"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="form-label">Email</FormLabel>
+                    <FormControl>
+                      <Input placeholder="Enter your email" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
               {/* password field */}
               <FormField
                 control={form.control}
@@ -83,7 +102,25 @@ export default function SignUpForm() {
                   <FormItem>
                     <FormLabel className="form-label">Password</FormLabel>
                     <FormControl>
-                      <PasswordInput field={field} />
+                      <PasswordInput<typeof field> field={field} />
+                    </FormControl>
+                    {/* <FormDescription className="form-input-description">Enter your password.</FormDescription> */}
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              {/* confirm password */}
+              <FormField
+                control={form.control}
+                name="confirm_password"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="form-label">
+                      Confirm Password
+                    </FormLabel>
+                    <FormControl>
+                      <PasswordInput<typeof field> field={field} />
                     </FormControl>
                     {/* <FormDescription>Enter your password.</FormDescription> */}
                     <FormMessage />

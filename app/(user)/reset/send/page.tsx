@@ -24,8 +24,9 @@ export default function EmailSuccess() {
           <div className="email-info">
             <div className="email-info-title">Check Email</div>
             <div className="email-info-description">
-              Please check your email inbox and click on the provided link to
-              reset your password. If you don't receive email.
+              {
+                "Please check your email inbox and click on the provided link to reset your password. If you don't receive email."
+              }
               <Link href={""}> Click here to resend</Link>
             </div>
           </div>

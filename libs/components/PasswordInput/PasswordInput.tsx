@@ -6,14 +6,7 @@ import { ControllerRenderProps } from "react-hook-form";
 import { FiEyeOff } from "react-icons/fi";
 import { FiEye } from "react-icons/fi";
 
-export default function PasswordInput({
-  field,
-}: {
-  field: ControllerRenderProps<{
-    password: string;
-    username: string;
-  }>;
-}) {
+export default function PasswordInput<T>({ field }: { field: T }) {
   const [eye, setEye] = useState(false);
 
   const handleEye = () => {
