@@ -1,5 +1,5 @@
 "use client";
-import "./SignIn.css";
+import "./Reset.css";
 
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -19,19 +19,16 @@ import { Input } from "@/components/ui/input";
 
 import Image from "next/image";
 import Link from "next/link";
-import PasswordInput from "@/libs/components/PasswordInput/PasswordInput";
 
 const formSchema = z.object({
-  username: z.string().min(2).max(50),
-  password: z.string().min(8).max(16),
+  email: z.string().email(),
 });
 
-export default function SignInForm() {
+export default function ResetForm() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      username: "",
-      password: "",
+      email: "",
     },
   });
 
@@ -42,53 +39,37 @@ export default function SignInForm() {
   }
 
   return (
-    <main className="signin">
+    <main className="reset">
       {/* Image section */}
-      <section className="signin-image">
+      <section className="reset-image">
         <Image
-          src={"/assets/images/authentication/signInImg.webp"}
-          alt="Sign-in"
+          src={"/assets/images/authentication/reset.webp"}
+          alt="Reset"
           width={0}
           height={0}
           sizes="100%"
         />
       </section>
 
-      <section className="signin-form">
-        <div className="signin-form__container">
-          <div className="form-title">Sign-In</div>
+      <section className="reset-form">
+        <div className="reset-form__container">
+          <div className="form-title">Reset Your Password</div>
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-              {/* username field */}
+              {/* email field */}
               <FormField
                 control={form.control}
-                name="username"
+                name="email"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="form-label">Username</FormLabel>
+                    <FormLabel className="form-label">Email</FormLabel>
                     <FormControl>
-                      <Input placeholder="Enter your username." {...field} />
-                    </FormControl>
-                    {/* <FormDescription>Enter your username.</FormDescription> */}
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-
-              {/* password field */}
-              <FormField
-                control={form.control}
-                name="password"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel className="form-label">Password</FormLabel>
-                    <FormControl>
-                      <PasswordInput<typeof field> field={field} />
+                      <Input placeholder="Enter email." {...field} />
                     </FormControl>
                     <FormDescription className="form-input-description">
-                      <Link href={"/reset"} className="forget-password">
-                        Forget your password
-                      </Link>
+                      {
+                        "Enter your email and we'll send you a link to reset your password."
+                      }
                     </FormDescription>
                     <FormMessage />
                   </FormItem>
@@ -100,7 +81,7 @@ export default function SignInForm() {
               </Button>
 
               <div className="form-link">
-                Not have an account? <Link href={"/signup"}>Sign Up</Link>
+                Back to <Link href={"/signin"}>Sign In</Link>
               </div>
             </form>
           </Form>

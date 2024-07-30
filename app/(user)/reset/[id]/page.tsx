@@ -1,5 +1,5 @@
 "use client";
-import "./SignUp.css";
+import "./Password.css";
 
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -15,25 +15,23 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
 
 import Image from "next/image";
-import Link from "next/link";
 import PasswordInput from "@/libs/components/PasswordInput/PasswordInput";
 
 const formSchema = z.object({
-  username: z.string().min(2).max(50),
-  email: z.string().email(),
   password: z.string().min(8).max(16),
   confirm_password: z.string().min(8).max(16),
 });
 
-export default function SignUpForm() {
+export default function ResetPasswordForm({
+  params,
+}: {
+  params: { id: string };
+}) {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      username: "",
-      email: "",
       password: "",
       confirm_password: "",
     },
@@ -46,55 +44,29 @@ export default function SignUpForm() {
   }
 
   return (
-    <main className="signup">
+    <main className="reset-password">
       {/* Image section */}
-      <section className="signup-image">
+      <section className="reset-password-image">
         <Image
-          src={"/assets/images/authentication/signUpImg.webp"}
-          alt="Sign-Up"
+          src={"/assets/images/authentication/newPassword.webp"}
+          alt="Reset"
           width={0}
           height={0}
           sizes="100%"
         />
       </section>
 
-      <section className="signup-form">
-        <div className="signup-form__container">
-          <div className="form-title">Sign-Up</div>
+      <section className="reset-password-form">
+        <div className="reset-password-form__container">
+          <div>
+            <div className="form-title">Create New Password</div>
+            <p className="form-title-description">
+              Your new password must be different from previous passwords.
+            </p>
+          </div>
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-              {/* username field */}
-              <FormField
-                control={form.control}
-                name="username"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel className="form-label">Username</FormLabel>
-                    <FormControl>
-                      <Input placeholder="Enter username." {...field} />
-                    </FormControl>
-                    {/* <FormDescription>Enter your username.</FormDescription> */}
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-
               {/* email field */}
-              <FormField
-                control={form.control}
-                name="email"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel className="form-label">Email</FormLabel>
-                    <FormControl>
-                      <Input placeholder="Enter your email" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-
-              {/* password field */}
               <FormField
                 control={form.control}
                 name="password"
@@ -104,13 +76,12 @@ export default function SignUpForm() {
                     <FormControl>
                       <PasswordInput<typeof field> field={field} />
                     </FormControl>
-                    {/* <FormDescription className="form-input-description">Enter your password.</FormDescription> */}
                     <FormMessage />
                   </FormItem>
                 )}
               />
 
-              {/* confirm password */}
+              {/* confirm password section */}
               <FormField
                 control={form.control}
                 name="confirm_password"
@@ -122,7 +93,6 @@ export default function SignUpForm() {
                     <FormControl>
                       <PasswordInput<typeof field> field={field} />
                     </FormControl>
-                    {/* <FormDescription>Enter your password.</FormDescription> */}
                     <FormMessage />
                   </FormItem>
                 )}
@@ -131,10 +101,6 @@ export default function SignUpForm() {
               <Button type="submit" className="form-button">
                 Submit
               </Button>
-
-              <div className="form-link">
-                Already have a account? <Link href={"/signin"}>Sign In</Link>
-              </div>
             </form>
           </Form>
         </div>

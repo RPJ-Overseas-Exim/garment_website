@@ -1,9 +1,9 @@
-.signin {
+.reset {
   display: flex;
   align-self: stretch;
 }
 
-.signin-image {
+.reset-image {
   display: none;
 
   img {
@@ -13,7 +13,7 @@
   }
 }
 
-.signin-form {
+.reset-form {
   width: 100%;
 
   display: flex;
@@ -22,7 +22,7 @@
   padding-block: 3em;
 }
 
-.signin-form__container {
+.reset-form__container {
   max-width: 400px;
   width: 80%;
   display: flex;
@@ -36,28 +36,8 @@
   color: var(--text-dark);
 }
 
-.form-input {
-  display: flex;
-  align-items: center;
-  gap: 1em;
-  position: relative;
-}
-
-.eyeIcon {
-  font-size: 1.3rem;
-  cursor: pointer;
-  position: absolute;
-  right: 0.6em;
-}
-
 .form-input-description {
   width: 100%;
-  color: var(--text-regular);
-}
-
-.forget-password {
-  width: 100%;
-  text-align: right;
   color: var(--text-regular);
 }
 
@@ -72,18 +52,18 @@
   color: var(--bg-light);
 }
 
-.form-link a {
+.form-link > a {
   font-weight: 600;
   color: var(--text-purple);
 }
 
 @media screen and (--viewport-medium) {
-  .signin-image {
+  .reset-image {
     display: block;
     width: 50%;
   }
 
-  .signin-form {
+  .reset-form {
     width: 50%;
   }
 }

@@ -50,6 +50,11 @@
   right: 0.6em;
 }
 
+.form-input-description {
+  width: 100%;
+  color: var(--text-regular);
+}
+
 .form-label {
   font-size: 1rem;
   font-weight: 700;
