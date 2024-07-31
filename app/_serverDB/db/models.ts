@@ -5,7 +5,6 @@ import {
   varchar,
   json,
 } from "drizzle-orm/pg-core";
-import { nanoid } from "nanoid";
 import { sql } from "drizzle-orm";
 
 export const createTable = pgTableCreator((name) => name);
@@ -13,7 +12,7 @@ export const createTable = pgTableCreator((name) => name);
 export const User = createTable(
   "users",
   {
-    id: varchar("id").default(nanoid(12)).primaryKey(),
+    id: varchar("id").primaryKey(),
     username: varchar("username").notNull(),
     email: varchar("email").notNull(),
     password: varchar("password", { length: 16 }).notNull(),
@@ -31,7 +30,7 @@ export const User = createTable(
 export const Product = createTable(
   "products",
   {
-    id: varchar("id").default(nanoid(12)).primaryKey(),
+    id: varchar("id").primaryKey(),
     name: varchar("name").notNull(),
     description: varchar("description").notNull(),
     category: varchar("category").notNull(),
