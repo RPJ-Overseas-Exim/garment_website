@@ -20,6 +20,9 @@ import { Input } from "@/components/ui/input";
 import Image from "next/image";
 import Link from "next/link";
 import PasswordInput from "@/libs/components/PasswordInput/PasswordInput";
+import SignUp from "@/app/_serverDB/serverUtils/SignUp";
+import { Toaster } from "@/components/ui/sonner";
+import { toast } from "sonner";
 
 const formSchema = z.object({
   username: z.string().min(2).max(50),
@@ -29,6 +32,7 @@ const formSchema = z.object({
 });
 
 export default function SignUpForm() {
+  // created a form template
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -39,10 +43,28 @@ export default function SignUpForm() {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    console.log(values);
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    // check if the confirm password and password is equal or not
+    if (values.confirm_password !== values.password) {
+      return toast.error("Confirm password and password are not same!!");
+    }
+
+    try {
+      // register the user
+      var responseMessage = await SignUp(values);
+
+      // set the message
+      if (responseMessage == "Success") {
+        // for success Message
+        toast.success("User registered successfully!");
+      } else {
+        // for error message
+        toast.error(responseMessage);
+      }
+    } catch (err) {
+      toast.error("Something went wrong! Please try again later");
+      return;
+    }
   }
 
   return (
@@ -58,9 +80,11 @@ export default function SignUpForm() {
         />
       </section>
 
+      {/* form section */}
       <section className="signup-form">
         <div className="signup-form__container">
           <div className="form-title">Sign-Up</div>
+          <Toaster />
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
               {/* username field */}
