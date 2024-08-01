@@ -7,5 +7,6 @@ export default {
   dbCredentials: {
     url: env.DATABASE_URL,
   },
+  out: "./app/_serverDB/db/migrations/",
   tablesFilter: ["garment_website_*"],
 } satisfies Config;
