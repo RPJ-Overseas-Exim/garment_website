@@ -46,7 +46,7 @@ export default function SignUpForm() {
   async function onSubmit(values: z.infer<typeof formSchema>) {
     // check if the confirm password and password is equal or not
     if (values.confirm_password !== values.password) {
-      return toast.error("Confirm password and password are not same!!");
+      return toast.info("Confirm password and password are not same!!");
     }
 
     try {
@@ -62,7 +62,7 @@ export default function SignUpForm() {
         toast.error(responseMessage);
       }
     } catch (err) {
-      toast.error("Something went wrong! Please try again later");
+      toast.info("Something went wrong! Please try again later");
       return;
     }
   }
@@ -79,12 +79,10 @@ export default function SignUpForm() {
           sizes="100%"
         />
       </section>
-
       {/* form section */}
       <section className="signup-form">
         <div className="signup-form__container">
           <div className="form-title">Sign-Up</div>
-          <Toaster />
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
               {/* username field */}
@@ -163,6 +161,7 @@ export default function SignUpForm() {
           </Form>
         </div>
       </section>
+      <Toaster closeButton richColors />
     </main>
   );
 }

@@ -3,6 +3,7 @@ import { eq, or } from "drizzle-orm";
 import db from "../db/connDB";
 import { User } from "../db/models";
 import { nanoid } from "nanoid";
+import argon2 from "argon2";
 
 export default async function SignUp({
   username,
@@ -25,17 +26,21 @@ export default async function SignUp({
       return "The user with same username or email is already present.";
     }
 
+    // hash the password
+    const hashedPassword = await argon2.hash(password, { hashLength: 8 });
+
     // create the nanoid
     var id = nanoid(12);
-    await db
-      .insert(User)
-      .values({ id: id, username: username, email: email, password: password });
+    await db.insert(User).values({
+      id: id,
+      username: username,
+      email: email,
+      password: hashedPassword,
+    });
 
     // return a success message
     return "Success";
   } catch (err) {
-    console.log(err);
-
     // return a error message
     return "Something went wrong! Please try again later";
   }
