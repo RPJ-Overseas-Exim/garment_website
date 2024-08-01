@@ -8,7 +8,9 @@
     "start": "next start",
     "lint": "next lint",
     "studio": "drizzle-kit studio",
-    "push": "drizzle-kit push"
+    "push": "drizzle-kit push",
+    "migrate": "drizzle-kit migrate",
+    "generate": "drizzle-kit generate"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",

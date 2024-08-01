@@ -11,6 +11,7 @@ import {
   PaginationFirst,
   PaginationLast,
 } from "@/components/ui/pagination";
+import { useSearchParams } from "next/navigation";
 
 export default function Products({
   products,
@@ -20,6 +21,13 @@ export default function Products({
   lastPage: number;
 }) {
   const [page, setPage] = useState(1);
+  const searchParams = useSearchParams();
+
+  const createQuery = (key: string, value: string) => {
+    const params = new URLSearchParams(searchParams);
+    params.set(key, value);
+    return params.toString();
+  };
   return (
     <>
       <article className="shop__products">
@@ -51,15 +59,19 @@ export default function Products({
           );
         })}
       </article>
+
       <Pagination className="shop__pagination mt-8">
         <PaginationContent>
           <PaginationItem>
-            <PaginationFirst href={`/shop?page=1`} onClick={() => setPage(1)} />
+            <PaginationFirst
+              href={`/shop?${createQuery("page", "1")}`}
+              onClick={() => setPage(1)}
+            />
           </PaginationItem>
           {page - 1 >= 1 && (
             <PaginationItem>
               <PaginationLink
-                href={`/shop?page=${page - 1}`}
+                href={`/shop?${createQuery("page", String(page - 1))}`}
                 onClick={() => setPage(page - 1)}
                 className="bg-[var(--bg-light)] rounded-md hover:bg-gray-200"
               >
@@ -68,12 +80,14 @@ export default function Products({
             </PaginationItem>
           )}
           <PaginationItem className="border border-[var(--text-gray)] rounded-md">
-            <PaginationLink href={`/shop?page=${page}`}>{page}</PaginationLink>
+            <PaginationLink href={`/shop?${createQuery("page", String(page))}`}>
+              {page}
+            </PaginationLink>
           </PaginationItem>
           {page + 1 <= lastPage && (
             <PaginationItem>
               <PaginationLink
-                href={`/shop?page=${page + 1}`}
+                href={`/shop?${createQuery("page", String(page + 1))}`}
                 onClick={() => setPage(page + 1)}
                 className="bg-[var(--bg-light)] rounded-md hover:bg-gray-200"
               >
@@ -83,7 +97,7 @@ export default function Products({
           )}
           <PaginationItem>
             <PaginationLast
-              href={`/shop?page=${lastPage}`}
+              href={`/shop?${createQuery("page", String(lastPage))}`}
               onClick={() => setPage(lastPage)}
             />
           </PaginationItem>

@@ -3,7 +3,7 @@ import {
   pgTableCreator,
   timestamp,
   varchar,
-  json,
+  decimal,
 } from "drizzle-orm/pg-core";
 import { sql } from "drizzle-orm";
 
@@ -15,7 +15,7 @@ export const User = createTable(
     id: varchar("id").primaryKey(),
     username: varchar("username").notNull(),
     email: varchar("email").notNull(),
-    password: varchar("password", { length: 16 }).notNull(),
+    password: varchar("password", { length: 128 }).notNull(),
     createdAt: timestamp("created_at", { withTimezone: true })
       .default(sql`CURRENT_TIMESTAMP`)
       .notNull(),
@@ -34,7 +34,7 @@ export const Product = createTable(
     name: varchar("name").notNull(),
     description: varchar("description").notNull(),
     category: varchar("category").notNull(),
-    price: varchar("price").notNull(),
+    price: decimal("price").notNull(),
     images: varchar("image").notNull(),
     size: varchar("size").notNull(),
     createdAt: timestamp("created_at", { withTimezone: true })

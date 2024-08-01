@@ -26,6 +26,7 @@ export default async function RootLayout({
   //     ...product,
   //     id,
   //   });
+  // }
   return (
     <html lang="en">
       <body
