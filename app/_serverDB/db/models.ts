@@ -21,6 +21,7 @@ export const User = createTable(
       .notNull(),
     updatedAt: timestamp("updated_at", { withTimezone: true }),
     role: varchar("role").default("user"),
+    resetToken: varchar("resetToken").default(""),
   },
   (user) => ({
     nameIndex: index("users_usernames").on(user.username),
