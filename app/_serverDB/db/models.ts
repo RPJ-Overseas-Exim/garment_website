@@ -27,6 +27,18 @@ export const User = createTable(
   })
 );
 
+export const CustomOrder = createTable("custom_order", {
+  id: varchar("id").primaryKey(),
+  name: varchar("name").notNull(),
+  product: varchar("product").notNull(),
+  email: varchar("email").notNull(),
+  number: varchar("number").notNull(),
+  createdAt: timestamp("created_at", { withTimezone: true })
+    .default(sql`CURRENT_TIMESTAMP`)
+    .notNull(),
+  updatedAt: timestamp("updated_at", { withTimezone: true }),
+});
+
 export const Product = createTable(
   "products",
   {
@@ -46,3 +58,20 @@ export const Product = createTable(
     nameIndex: index("products_name").on(product.name),
   })
 );
+
+export const Cart = createTable("cart", {
+  id: varchar("id").primaryKey(),
+  userId: varchar("user_id")
+    .notNull()
+    .references(() => User.id),
+});
+
+export const CreateDetail = createTable("create_detail", {
+  id: varchar("id").primaryKey(),
+  CartId: varchar("cart_id")
+    .notNull()
+    .references(() => Cart.id),
+  ProductId: varchar("product_id")
+    .notNull()
+    .references(() => Product.id),
+});

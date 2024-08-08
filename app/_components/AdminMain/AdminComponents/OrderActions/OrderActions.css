@@ -1,0 +1,20 @@
+.order__actions {
+  display: flex;
+  gap: 0.5em;
+}
+
+.order__icon {
+  font-size: var(--text-base);
+  padding: 0.2em;
+  border-radius: 0.2em;
+  color: white;
+}
+.order__edit {
+  background-color: deepskyblue;
+}
+.order__edit-active {
+  background-color: #84cc16;
+}
+.order__delete {
+  background-color: tomato;
+}
