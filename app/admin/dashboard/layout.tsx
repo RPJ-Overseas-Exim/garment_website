@@ -1,12 +1,15 @@
+import { loginIsRequiredServer } from "@/libs/auth/auth";
 import AdminNavbar from "@/libs/components/AdminNavbar/AdminNavbar";
 import AdminSidebar from "@/libs/components/AdminSidebar/AdminSidebar";
 
 export const metadata = {
   title: "Dashboard",
 };
-export default function layout({
+export default async function layout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
+  await loginIsRequiredServer();
+
   return (
     <div className="flex h-screen">
       <AdminSidebar />
