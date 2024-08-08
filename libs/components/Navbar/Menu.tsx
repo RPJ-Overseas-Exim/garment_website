@@ -32,7 +32,7 @@ export default function Menu({ userLoggedIn }: { userLoggedIn: boolean }) {
         {/* Items elements */}
         <ul className="nav__items" onClick={closeMenu}>
           <li className="nav__item active">
-            <Link href={"/"}>Shop</Link>
+            <Link href={"/shop"}>Shop</Link>
           </li>
           <li className="nav__item">
             <Link href={"#"}>Men</Link>
