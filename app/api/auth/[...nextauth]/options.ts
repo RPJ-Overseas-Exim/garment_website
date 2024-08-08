@@ -6,7 +6,8 @@ import { eq } from "drizzle-orm";
 import { User } from "@/app/_serverDB/db/models";
 
 export interface CustomSession extends Session {
-  role: string;
+  role?: string;
+  username?: string;
 }
 
 export interface CustomUser extends userType {
@@ -96,6 +97,7 @@ export const authOptions: NextAuthOptions = {
       if (token) {
         // assign the role of the user to the session
         (session.user as CustomSession).role = (token.role as string) || "user";
+        (session.user as CustomSession).username = token.username as string;
       }
 
       return session;

@@ -9,7 +9,7 @@ import Logout from "@/app/(user)/profile/Logout";
 
 import { IoSettingsOutline } from "react-icons/io5";
 
-export default function AdminNavbar() {
+export default function AdminNavbar({ username }: { username: string }) {
   // state to maintain menu open
   const [notificationMenu, setNotificationMenu] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -90,7 +90,7 @@ export default function AdminNavbar() {
               className={`dropdown-menu ${menuOpen && "show-menu"}`}
               onClick={closeMenu}
             >
-              <span>Username</span>
+              <span>{username}</span>
               <hr />
               <span>
                 <IoSettingsOutline />
