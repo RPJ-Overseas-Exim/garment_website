@@ -1,10 +1,28 @@
 "use client";
+import { sendMail } from "@/libs/helpers/sendMail";
 import "./Send.css";
 
 import Image from "next/image";
 import Link from "next/link";
+import { Toaster } from "@/components/ui/sonner";
+import { toast } from "sonner";
 
 export default function EmailSuccess() {
+  async function ResendMail() {
+    const email = localStorage.getItem("email") as string;
+
+    try {
+      await sendMail(
+        email,
+        "Link to reset password of RPJ garments account",
+        "LINK TO RESET PASSWORD"
+      );
+      toast.success("Email sent successfully!");
+    } catch (err) {
+      toast.error("Something went wrong. Try again later");
+    }
+  }
+
   return (
     <main className="send-email">
       {/* Image section */}
@@ -27,10 +45,11 @@ export default function EmailSuccess() {
               {
                 "Please check your email inbox and click on the provided link to reset your password. If you don't receive email."
               }
-              <Link href={""}> Click here to resend</Link>
+              <button onClick={ResendMail}> Click here to resend</button>
             </div>
           </div>
           <Link href={"/signin"}> {"< Back to Login"} </Link>
+          <Toaster richColors closeButton />
         </div>
       </section>
     </main>
