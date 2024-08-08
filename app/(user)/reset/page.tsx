@@ -19,12 +19,20 @@ import { Input } from "@/components/ui/input";
 
 import Image from "next/image";
 import Link from "next/link";
+import { VerifiedEmail } from "@/libs/serverActions/verifyEmail";
+import { sendMail } from "@/libs/helpers/sendMail";
+
+import { Toaster } from "@/components/ui/sonner";
+import { toast } from "sonner";
+import { useRouter } from "next/navigation";
 
 const formSchema = z.object({
   email: z.string().email(),
 });
 
 export default function ResetForm() {
+  const router = useRouter();
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -32,8 +40,28 @@ export default function ResetForm() {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    const success = await VerifiedEmail(values.email);
+
+    if (!success) {
+      toast.error("Email is incorrect or no user is present with that email.");
+      return;
+    }
+
+    try {
+      await sendMail(
+        values.email,
+        "Link to reset password of RPJ garments account",
+        "LINK TO RESET PASSWORD"
+      );
+      toast.success("Email sent successfully!");
+
+      localStorage.setItem("email", values.email);
+
+      router.push("/reset/send");
+    } catch (err) {
+      toast.error("Something went wrong. Please try again later.");
+    }
   }
 
   return (
@@ -81,6 +109,7 @@ export default function ResetForm() {
               <div className="form-link">
                 Back to <Link href={"/signin"}>Sign In</Link>
               </div>
+              <Toaster richColors closeButton />
             </form>
           </Form>
         </div>
