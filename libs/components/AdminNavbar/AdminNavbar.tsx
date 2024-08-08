@@ -5,9 +5,9 @@ import "./AdminNavbar.css";
 import { IoNotificationsOutline } from "react-icons/io5";
 import { IoIosArrowDropdownCircle } from "react-icons/io";
 import { useState } from "react";
+import Logout from "@/app/(user)/profile/Logout";
 
 import { IoSettingsOutline } from "react-icons/io5";
-import { FaSignOutAlt } from "react-icons/fa";
 
 export default function AdminNavbar() {
   // state to maintain menu open
@@ -97,8 +97,7 @@ export default function AdminNavbar() {
                 Settings
               </span>
               <span>
-                <FaSignOutAlt />
-                Sign Out
+                <Logout />
               </span>
             </div>
           </div>

@@ -58,10 +58,10 @@ export default function Menu({ userLoggedIn }: { userLoggedIn: boolean }) {
           {/* elements rendering based on the user is signed or not */}
           {userLoggedIn ? (
             <div>
-              <Link href={"#"} className="nav__button">
+              <Link href={"/profile"} className="nav__button">
                 <RxAvatar className="nav__button-icon" />
               </Link>
-              <Link href={"#"} className="nav__button">
+              <Link href={"/shop/cart"} className="nav__button">
                 <FiShoppingCart className="nav__button-icon" />
               </Link>
             </div>
