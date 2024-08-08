@@ -11,9 +11,12 @@ export default function Logout() {
     router.push("/");
   };
   return (
-    <button onClick={() => handleLogout()}>
+    <button
+      onClick={() => handleLogout()}
+      className="flex items-center gap-[0.2rem]"
+    >
       <FaSignOutAlt />
-      <span>Logout</span>
+      <span>Sign Out</span>
     </button>
   );
 }
