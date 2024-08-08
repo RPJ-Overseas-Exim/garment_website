@@ -67,12 +67,15 @@ export default async function page({ params }: { params: { id: string } }) {
             <div className="one-product__colors">
               <input type="radio" name="color" value="blue" data-color="blue" />
               <input type="radio" name="color" value="pink" data-color="blue" />
-              <input type="radio" name="color" value="orange" data-color="orange" />
-              <input type="radio" name="color" value="red" data-color="red/>
+              <input
+                type="radio"
+                name="color"
+                value="orange"
+                data-color="orange"
+              />
+              <input type="radio" name="color" value="red" data-color="red" />
             </div>
           </div>
-
-          <div className="one-product__add-to-cart"></div>
         </div>
       </article>
     </section>
