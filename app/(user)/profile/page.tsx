@@ -24,9 +24,9 @@ export default async function Profile() {
           </div>
 
           {(session?.user as CustomSession).role === "admin" && (
-            <div className="md:w-[47%] p-[0.5em_1em] rounded-[0.5em] text-[var(--text-light)] hover:bg-[var(--text-purple)] bg-[var(--text-dark)]">
-              <Link href={"/admin/dashboard"}>Dashboard</Link>
-            </div>
+            <Link href={"/admin/dashboard"} className="md:w-[47%] p-[0.5em_1em] rounded-[0.5em] text-[var(--text-light)] hover:bg-[var(--text-purple)] bg-[var(--text-dark)]" >
+                Dashboard
+            </Link>
           )}
         </div>
       </div>
