@@ -63,15 +63,15 @@ export default async function page() {
 
   return (
     <>
-      <article id="top-products">
+      <article id="orders">
         <div className="flex w-full justify-between px-4">
           <h2 className="dashboard-home__title">Orders</h2>
           <AddOrder />
         </div>
-        <div className="top-products__overflow-wrapper">
-          <table className="top-products">
+        <div className="orders__overflow-wrapper">
+          <table className="orders">
             <thead>
-              <tr className="top-products__header">
+              <tr className="orders__header">
                 <th>#</th>
                 <th>Name</th>
                 <th>Number</th>
@@ -97,7 +97,7 @@ export default async function page() {
           </table>
         </div>
       </article>
-      <Toaster />
+      <Toaster richColors closeButton />
     </>
   );
 }

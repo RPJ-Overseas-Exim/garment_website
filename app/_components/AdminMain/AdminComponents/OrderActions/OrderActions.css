@@ -5,9 +5,10 @@
 
 .order__icon {
   font-size: var(--text-base);
-  padding: 0.2em;
-  border-radius: 0.2em;
+  border-radius: 0.3em;
+  padding: 0.5em;
   color: white;
+  height: fit-content;
 }
 .order__edit {
   background-color: deepskyblue;

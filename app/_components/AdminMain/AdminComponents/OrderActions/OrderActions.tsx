@@ -1,11 +1,11 @@
 "use client";
-import React from "react";
-import { FaDeleteLeft } from "react-icons/fa6";
 import "./OrderActions.css";
-import EditCustomerDialog from "./EditCustomerDialog";
-import { Toaster } from "@/components/ui/sonner";
 import { toast } from "sonner";
-import { deleteOrder } from "./OrderServerActions";
+import { deleteOrder, undoDeletion } from "./OrderServerActions";
+import EditCustomerDialog from "./EditCustomerDialog";
+import { FaDeleteLeft } from "react-icons/fa6";
+import { useState } from "react";
+import Spinner from "@/libs/components/Spinner/Spinner";
 
 type Customer = {
   id: string;
@@ -16,29 +16,52 @@ type Customer = {
 };
 
 export default function OrderActions({ customer }: { customer: Customer }) {
-  const handleDelete = async () => {
+  const [disabled, setDisabled] = useState(false);
+  const undoDelete = async () => {
     try {
-      const res = await deleteOrder(customer.id);
-      console.log(res);
-      if (res.length > 1) {
-        toast.success("Order Deleted successfully");
+      const res = await undoDeletion(customer);
+      if (res) {
+        toast.success("Deletion Undone successfully");
       }
     } catch (error) {
       console.log(error);
-      toast.error("Order couldn't be deleted");
+      toast.error("This Deletion cannot be undone");
+    }
+  };
+
+  const handleDelete = async () => {
+    setDisabled(true);
+    try {
+      const res = await deleteOrder(customer.id);
+      console.log(res);
+      if (res.length > 0) {
+        setDisabled(false);
+        return toast("Order Deleted successfully", {
+          action: {
+            label: "undo",
+            onClick: undoDelete,
+          },
+        });
+      }
+    } catch (error) {
+      console.log(error);
+      setDisabled(false);
+      return toast.error("Order couldn't be deleted");
     }
   };
   return (
     <>
       <td className="order__actions">
-        <EditCustomerDialog customer={customer} />
+        <EditCustomerDialog order={customer} />
         <button
           type="button"
           className="order__icon order__delete"
           title="Delete order"
           onClick={handleDelete}
+          aria-disabled={disabled}
+          disabled={disabled}
         >
-          <FaDeleteLeft />
+          {disabled ? <Spinner h="4" w="4" b="2" /> : <FaDeleteLeft />}
         </button>
       </td>
     </>

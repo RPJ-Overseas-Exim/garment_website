@@ -31,10 +31,32 @@ export async function deleteOrder(id: string) {
       .delete(CustomOrder)
       .where(eq(CustomOrder.id, id))
       .returning();
-    revalidatePath("/admin/dashboard/orders");
+    if (response.length > 0) {
+      revalidatePath("/admin/dashboard/orders");
+    }
     return response;
   } catch (error) {
     console.log(error);
     throw new Error("Data could not be deleted");
+  }
+}
+
+export async function undoDeletion(data: {
+  id: string;
+  name: string;
+  email: string;
+  product: string;
+  number: string;
+}) {
+  try {
+    const res = await db.insert(CustomOrder).values(data).returning();
+    if (res) {
+      revalidatePath("/admin/dashboard/orders");
+      return res;
+    }
+    return [];
+  } catch (error) {
+    console.log(error);
+    throw new Error("Couldn't Undo Deleteion");
   }
 }
