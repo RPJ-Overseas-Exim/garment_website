@@ -6,16 +6,24 @@ import Image from "next/image";
 import Link from "next/link";
 import { Toaster } from "@/components/ui/sonner";
 import { toast } from "sonner";
+import generateToken from "@/libs/serverActions/generateToken";
 
 export default function EmailSuccess() {
   async function ResendMail() {
     const email = localStorage.getItem("email") as string;
 
+    if (!email.length) {
+      toast.error("Something went wrong!");
+      return;
+    }
+
+    const token = await generateToken(email);
+
     try {
       await sendMail(
         email,
         "Link to reset password of RPJ garments account",
-        "LINK TO RESET PASSWORD"
+        `LINK TO RESET PASSWORD: http://192.168.1.2:3000/reset/${token}`
       );
       toast.success("Email sent successfully!");
     } catch (err) {

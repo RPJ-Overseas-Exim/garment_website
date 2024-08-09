@@ -4,7 +4,7 @@
 }
 
 .send-email-image {
-  width: 50%;
+  display: none;
 
   img {
     width: 100%;
@@ -14,7 +14,7 @@
 }
 
 .send-email-info {
-  width: 50%;
+  width: 100%;
   display: flex;
   justify-content: center;
   padding-block: 3em;
@@ -46,7 +46,7 @@
   color: var(--text-regular);
 }
 
-.email-info-description > a {
+.email-info-description > button {
   color: var(--text-purple);
   font-weight: 700;
 }
@@ -54,4 +54,15 @@
 .send-email__container > a {
   color: var(--text-dark);
   font-weight: 800;
+}
+
+@media screen and (--viewport-medium) {
+  .send-email-image {
+    display: block;
+    width: 50%;
+  }
+
+  .send-email-info {
+    width: 50%;
+  }
 }
