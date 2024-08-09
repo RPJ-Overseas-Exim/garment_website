@@ -5,33 +5,57 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-  DialogClose,
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { FaRegEdit } from "react-icons/fa";
-type Customer = {
-  id: string;
-  name: string;
-  number: string;
-  email: string;
-  product: string;
-};
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
 import { editOrder } from "./OrderServerActions";
-import { useState } from "react";
 import { toast } from "sonner";
+import Spinner from "@/libs/components/Spinner/Spinner";
 
-export default function EditCustomerDialog({
-  customer,
+const formSchema = z.object({
+  editName: z.string().min(3, "Name should be at least three letters long"),
+  editNumber: z.string().min(10, "Number should be 10 digits long"),
+  editEmail: z.string().email(),
+  editProduct: z
+    .string()
+    .min(4, "Please enter a product name greater than 4 letters."),
+});
+
+export default async function EditCustomerDialog({
+  order,
 }: {
-  customer: Customer;
+  order: {
+    id: string;
+    name: string;
+    email: string;
+    product: string;
+    number: string;
+  };
 }) {
-  const [order, setOrder] = useState(customer);
+  const editForm = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      editName: order.name,
+      editNumber: order.number,
+      editEmail: order.email,
+      editProduct: order.product,
+    },
+  });
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (editedOrder: z.infer<typeof formSchema>) => {
     try {
-      const res = await editOrder(order);
+      const res = await editOrder({
+        name: editedOrder.editName,
+        email: editedOrder.editEmail,
+        number: editedOrder.editNumber,
+        product: editedOrder.editProduct,
+        id: order.id,
+      });
       if (res.length > 0) {
         return toast.success("Order updated successfully.");
       }
@@ -48,70 +72,91 @@ export default function EditCustomerDialog({
             type="button"
             className="order__icon order__edit"
             title="Edit order"
+            aria-disabled={editForm.formState.isSubmitting}
+            disabled={editForm.formState.isSubmitting}
           >
-            <FaRegEdit />
+            {editForm.formState.isSubmitting ? (
+              <Spinner w="4" h="4" b="2" />
+            ) : (
+              <FaRegEdit />
+            )}
           </Button>
         </DialogTrigger>
         <DialogContent className="sm:max-w-md">
           <DialogHeader>
             <DialogTitle>Edit Order</DialogTitle>
             <DialogDescription>
-              Make any changes to the order.
+              Make any changes to existing order.
             </DialogDescription>
           </DialogHeader>
-          <div className="flex items-center space-x-2">
-            <div className="grid flex-1 gap-2">
-              <Label htmlFor="name">Name</Label>
-              <Input
-                id="name"
-                defaultValue={order.name}
-                onChange={(e) => setOrder({ ...order, name: e.target.value })}
-              />
+          <form onSubmit={editForm.handleSubmit(handleSubmit)}>
+            <div className="flex items-center space-x-2 my-4">
+              <div className="grid flex-1 gap-2">
+                <Label htmlFor="editName">Name</Label>
+                <Input
+                  id="editName"
+                  {...editForm.register("editName", { required: true })}
+                />
+                {editForm.formState.errors.editName && (
+                  <p className="text-red-400 text-sm m-0">
+                    {editForm.formState.errors.editName.message}
+                  </p>
+                )}
+              </div>
             </div>
-          </div>
 
-          <div className="flex items-center space-x-2">
-            <div className="grid flex-1 gap-2">
-              <Label htmlFor="email">Email</Label>
-              <Input
-                id="email"
-                defaultValue={order.email}
-                onChange={(e) => setOrder({ ...order, email: e.target.value })}
-              />
+            <div className="flex items-center space-x-2 my-4">
+              <div className="grid flex-1 gap-2">
+                <Label htmlFor="editEmail">Email</Label>
+                <Input
+                  id="editEmail"
+                  {...editForm.register("editEmail", { required: true })}
+                />
+                {editForm.formState.errors.editEmail && (
+                  <p className="text-red-400 text-sm m-0">
+                    {editForm.formState.errors.editEmail.message}
+                  </p>
+                )}
+              </div>
             </div>
-          </div>
-          <div className="flex items-center space-x-2">
-            <div className="grid flex-1 gap-2">
-              <Label htmlFor="number">Number</Label>
-              <Input
-                id="number"
-                defaultValue={order.number}
-                onChange={(e) => setOrder({ ...order, number: e.target.value })}
-              />
+
+            <div className="flex items-center space-x-2 my-4">
+              <div className="grid flex-1 gap-2">
+                <Label htmlFor="editNumber">Number</Label>
+                <Input
+                  id="editNumber"
+                  {...editForm.register("editNumber", { required: true })}
+                />
+                {editForm.formState.errors.editNumber && (
+                  <p className="text-red-400 text-sm m-0">
+                    {editForm.formState.errors.editNumber.message}
+                  </p>
+                )}
+              </div>
             </div>
-          </div>
-          <div className="flex items-center space-x-2">
-            <div className="grid flex-1 gap-2">
-              <Label htmlFor="product">Product</Label>
-              <Input
-                id="product"
-                defaultValue={order.product}
-                onChange={(e) =>
-                  setOrder({ ...order, product: e.target.value })
-                }
-              />
+
+            <div className="flex items-center space-x-2 my-4">
+              <div className="grid flex-1 gap-2">
+                <Label htmlFor="editProduct">Product</Label>
+                <Input
+                  id="editProduct"
+                  {...editForm.register("editProduct", { required: true })}
+                />
+                {editForm.formState.errors.editProduct && (
+                  <p className="text-red-400 text-sm my-0">
+                    {editForm.formState.errors.editProduct.message}
+                  </p>
+                )}
+              </div>
             </div>
-          </div>
-          <DialogClose asChild>
             <Button
               type="submit"
               size="sm"
-              className="px-3 bg-sky-500 text-white hover:bg-sky-700"
-              onClick={handleSubmit}
+              className="px-3 w-full bg-sky-500 text-white hover:bg-sky-700"
             >
               <span>Edit</span>
             </Button>
-          </DialogClose>
+          </form>
         </DialogContent>
       </Dialog>
     </>
