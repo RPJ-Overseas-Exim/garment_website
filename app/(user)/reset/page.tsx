@@ -25,6 +25,7 @@ import { sendMail } from "@/libs/helpers/sendMail";
 import { Toaster } from "@/components/ui/sonner";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
+import generateToken from "@/libs/serverActions/generateToken";
 
 const formSchema = z.object({
   email: z.string().email(),
@@ -48,11 +49,13 @@ export default function ResetForm() {
       return;
     }
 
+    const token = await generateToken(values.email);
+
     try {
       await sendMail(
         values.email,
         "Link to reset password of RPJ garments account",
-        "LINK TO RESET PASSWORD"
+        `LINK TO RESET PASSWORD: http://192.168.1.2:3000/reset/${token}`
       );
       toast.success("Email sent successfully!");
 

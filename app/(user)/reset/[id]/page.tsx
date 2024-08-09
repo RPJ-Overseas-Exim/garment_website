@@ -19,6 +19,11 @@ import {
 import Image from "next/image";
 import PasswordInput from "@/libs/components/PasswordInput/PasswordInput";
 
+import { Toaster } from "@/components/ui/sonner";
+import { toast } from "sonner";
+import resetPassword from "@/libs/serverActions/resetPassword";
+import { useRouter } from "next/navigation";
+
 const formSchema = z.object({
   password: z.string().min(8).max(16),
   confirm_password: z.string().min(8).max(16),
@@ -29,6 +34,8 @@ export default function ResetPasswordForm({
 }: {
   params: { id: string };
 }) {
+  const router = useRouter();
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -37,10 +44,25 @@ export default function ResetPasswordForm({
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    console.log(values);
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    try {
+      if (values.confirm_password !== values.password) {
+        return toast.info("Confirm password and password is different.");
+      }
+
+      const token = params.id;
+
+      const message = await resetPassword(token, values.password);
+
+      if (message !== "Success") {
+        return toast.error(message);
+      }
+
+      toast.success("Password reset successfully!");
+      router.push("/");
+    } catch (err) {
+      toast.error("Something went wrong. Try again later.");
+    }
   }
 
   return (
@@ -104,6 +126,7 @@ export default function ResetPasswordForm({
             </form>
           </Form>
         </div>
+        <Toaster richColors closeButton />
       </section>
     </main>
   );

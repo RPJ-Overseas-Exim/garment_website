@@ -21,8 +21,9 @@ import Image from "next/image";
 import Link from "next/link";
 import PasswordInput from "@/libs/components/PasswordInput/PasswordInput";
 import { signIn } from "next-auth/react";
-import { useRouter } from "next/navigation";
 import { toast, Toaster } from "sonner";
+import revalidateUrl from "@/libs/serverActions/revalidateUrl";
+import { usePathname } from "next/navigation";
 
 const formSchema = z.object({
   username: z.string().min(2).max(50),
@@ -30,7 +31,7 @@ const formSchema = z.object({
 });
 
 export default function SignIn() {
-  const router = useRouter();
+  const path = usePathname();
 
   // form schema
   const form = useForm<z.infer<typeof formSchema>>({
@@ -59,7 +60,7 @@ export default function SignIn() {
       // await new Promise((resolve) => setTimeout(() => resolve, 3000));
 
       // push the user to the homepage
-      router.push("/");
+      revalidateUrl(path);
       return;
     } catch (err) {
       console.log(err);
