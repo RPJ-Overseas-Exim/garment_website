@@ -12,6 +12,7 @@ import {
   PaginationLast,
 } from "@/components/ui/pagination";
 import { useSearchParams } from "next/navigation";
+import Link from "next/link";
 
 export default function Products({
   products,
@@ -33,29 +34,31 @@ export default function Products({
       <article className="shop__products">
         {products.map((product, index) => {
           return (
-            <div className="product" key={index}>
-              <div>
-                <Image
-                  src={products[0].images}
-                  alt={products[0].name}
-                  width={0}
-                  height={0}
-                  sizes="100%"
-                  className="product__image"
-                />
-              </div>
-
-              <div className="product__description">
-                <div className="product__description-left">
-                  <h4 className="product__name">{product.name}</h4>
-                  <div className="product__brand">{product.category}</div>
+            <Link href={`/shop/product/${product.id}`}>
+              <div className="product" key={index}>
+                <div className="product__image-container">
+                  <Image
+                    src={product.images}
+                    alt={product.name}
+                    width={0}
+                    height={0}
+                    sizes="100%"
+                    className="product__image"
+                  />
                 </div>
 
-                <div className="product__description-right">
-                  <div className="product__price">{product.price}</div>
+                <div className="product__description">
+                  <div className="product__description-left">
+                    <h4 className="product__name">{product.name}</h4>
+                    <div className="product__brand">{product.category}</div>
+                  </div>
+
+                  <div className="product__description-right">
+                    <div className="product__price">{product.price}</div>
+                  </div>
                 </div>
               </div>
-            </div>
+            </Link>
           );
         })}
       </article>

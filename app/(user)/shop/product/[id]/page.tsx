@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import "./OneProduct.css";
 import { FaStar } from "react-icons/fa6";
 import { FaStarHalf } from "react-icons/fa6";
+import BuyNow from "./BuyNow";
 
 export default async function page({ params }: { params: { id: string } }) {
   const product = (
@@ -14,7 +15,7 @@ export default async function page({ params }: { params: { id: string } }) {
   if (!product) notFound();
   return (
     <section className="one-product">
-      <article className="product-overview">
+      <article className="product-overview ">
         <div className="product-overview__images">
           <Image
             src={product.images}
@@ -38,32 +39,34 @@ export default async function page({ params }: { params: { id: string } }) {
             </div>
           </div>
 
-          <div className="one-product__size">
-            <h4>Size</h4>
-            <div className="one-product__sizes">
-              <button
-                type="button"
-                className={product.size === "M" ? "size-btn-active" : ""}
-              >
-                M
-              </button>
-              <button
-                type="button"
-                className={product.size === "L" ? "size-btn-active" : ""}
-              >
-                L
-              </button>
-              <button
-                type="button"
-                className={product.size === "XL" ? "size-btn-active" : ""}
-              >
-                XL
-              </button>
+          <div className="one-product__sizes-buy-now">
+            <div className="one-product__size">
+              <h4>Size</h4>
+              <div className="one-product__sizes">
+                <button
+                  type="button"
+                  className={product.size === "M" ? "size-btn-active" : ""}
+                >
+                  M
+                </button>
+                <button
+                  type="button"
+                  className={product.size === "L" ? "size-btn-active" : ""}
+                >
+                  L
+                </button>
+                <button
+                  type="button"
+                  className={product.size === "XL" ? "size-btn-active" : ""}
+                >
+                  XL
+                </button>
+              </div>
             </div>
+            <BuyNow product={product.name} />
           </div>
-
-          <div className="one-product__color">
-            <h4>Size</h4>
+          {/* <div className="one-product__color">
+            <h4>Color</h4>
             <div className="one-product__colors">
               <input type="radio" name="color" value="blue" data-color="blue" />
               <input type="radio" name="color" value="pink" data-color="blue" />
@@ -75,7 +78,7 @@ export default async function page({ params }: { params: { id: string } }) {
               />
               <input type="radio" name="color" value="red" data-color="red" />
             </div>
-          </div>
+          </div> */}
         </div>
       </article>
     </section>

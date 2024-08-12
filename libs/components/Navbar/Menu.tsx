@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { FaSearch } from "react-icons/fa";
+import { FaSearch, FaStore } from "react-icons/fa";
 import { RxAvatar } from "react-icons/rx";
 import { FiShoppingCart } from "react-icons/fi";
 import { IoMdClose } from "react-icons/io";
@@ -29,8 +29,8 @@ export default function Menu({ userLoggedIn }: { userLoggedIn: boolean }) {
           <IoMdClose className="close-button" />
         </div>
 
-        {/* Items elements */}
-        <ul className="nav__items" onClick={closeMenu}>
+        {/* Items elements  deprecated */}
+        {/* <ul className="nav__items" onClick={closeMenu}>
           <li className="nav__item active">
             <Link href={"/shop"}>Shop</Link>
           </li>
@@ -46,11 +46,14 @@ export default function Menu({ userLoggedIn }: { userLoggedIn: boolean }) {
           <li className="nav__item hidden lg:block">
             <Link href={"#"}>Joggers</Link>
           </li>
-        </ul>
+        </ul> */}
 
         {/* buttons elements */}
         <div className="nav__buttons" onClick={closeMenu}>
           {/* Search icon */}
+          <Link href={"/shop"} className="nav__button">
+            <FaStore className="cursor-pointer w-[1.2em] h-[1.2em] text-skyblue-400" />
+          </Link>
           <Link href={"#"} className="nav__button">
             <FaSearch className="cursor-pointer w-[1.2em] h-[1.2em]" />
           </Link>

@@ -49,7 +49,7 @@ export default async function page({
       .where(and(sizeQ, categoryQ))
   )[0].count;
 
-  const lastPage = countProduct === 0 ? 1 : Math.ceil(countProduct / 10);
+  const lastPage = countProduct === 0 ? 1 : Math.ceil(countProduct / 9);
   if (page <= 0 || page > lastPage) page = 1;
 
   return (
