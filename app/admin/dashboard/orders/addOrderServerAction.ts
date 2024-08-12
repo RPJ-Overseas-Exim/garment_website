@@ -25,10 +25,14 @@ export default async function addOrder(data: {
         Enquiry[data.product].body.replace("{Name}", data.name)
       );
     }
+
     revalidatePath("/admin/dashboard/orders");
-    return [];
-  } catch (error) {
-    console.log(error);
-    throw new Error("Couldn't Add user.");
+    return res;
+  } catch (err) {
+    revalidatePath("/admin/dashboard/orders");
+    if (err instanceof TypeError) {
+      return "Order added but email not sent";
+    }
+    console.error(err);
   }
 }
