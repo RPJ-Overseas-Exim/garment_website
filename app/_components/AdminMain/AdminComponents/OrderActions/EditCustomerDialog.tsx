@@ -153,6 +153,7 @@ export default async function EditCustomerDialog({
               type="submit"
               size="sm"
               className="px-3 w-full bg-sky-500 text-white hover:bg-sky-700"
+              disabled={editForm.formState.isSubmitting}
             >
               <span>Edit</span>
             </Button>

@@ -24,8 +24,7 @@ export default function Footer() {
           <div>
             <h4 id="Location">Location</h4>
             <ul aria-labelledby="Location">
-              <li>Mulund</li>
-              <li>Mumbai-400080, Maharashtra</li>
+              <li>Mumbai-400001, Maharashtra</li>
             </ul>
           </div>
 

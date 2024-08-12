@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import {
   Dialog,
   DialogContent,
@@ -7,7 +7,6 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-  DialogClose,
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -34,12 +33,14 @@ export default function AddOrder() {
   const handleSubmit = async (order: z.infer<typeof formSchema>) => {
     try {
       const res = await addOrder(order);
-      console.log(res);
-      if (res.length > 0) {
+      if (typeof res === "string") {
+        return toast.error(res);
+      }
+      if (res !== undefined && res.length > 0) {
         return toast.success("Order Added successfully.");
       }
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
 
@@ -116,6 +117,7 @@ export default function AddOrder() {
               type="submit"
               size="sm"
               className="px-3 w-full bg-sky-500 text-white hover:bg-sky-700"
+              disabled={form.formState.isSubmitting}
             >
               <span>Add</span>
             </Button>
