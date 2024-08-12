@@ -34,8 +34,8 @@ export default function Products({
       <article className="shop__products">
         {products.map((product, index) => {
           return (
-            <Link href={`/shop/product/${product.id}`}>
-              <div className="product" key={index}>
+            <Link key={index} href={`/shop/product/${product.id}`}>
+              <div className="product">
                 <div className="product__image-container">
                   <Image
                     src={product.images}
