@@ -15,7 +15,7 @@
 
 .product__image {
   border-radius: 0.7em;
-  max-height: 35rem;
+  max-height: 430px;
   object-fit: cover;
   object-position: center;
 }

@@ -17,12 +17,6 @@ export default function Filter() {
 
   const router = useRouter();
 
-  const handleFilterLeave = (filter: string) => {
-    const categories = document.querySelector(".shop__" + filter);
-    if (categories === null) return;
-    categories.classList.remove("shop__tabs-active");
-  };
-
   const handleFilterClick = (filter: string) => {
     const categories = document.querySelector(".shop__" + filter);
     if (categories === null) return;
@@ -47,7 +41,7 @@ export default function Filter() {
     }
   };
 
-  const handleFilterItemClick = (filter: string, filterName: string) => {
+  const handleFilterItemClick = (filter: string | null, filterName: string) => {
     if (filters[filterName] === filter) {
       setFilters({ ...filters, [filterName]: null });
       return;
@@ -84,7 +78,7 @@ export default function Filter() {
             <li>
               <input
                 type="radio"
-                onInput={() => handleFilterItemClick("All", "category")}
+                onInput={() => handleFilterItemClick(null, "category")}
                 id="all"
                 name="category"
               />
@@ -122,6 +116,15 @@ export default function Filter() {
             <RiArrowDownSLine />
           </button>
           <ul className="shop__size shop__filter-list">
+            <li>
+              <input
+                type="radio"
+                onInput={() => handleFilterItemClick(null, "size")}
+                name="size"
+                id="AllSizes"
+              />
+              <label htmlFor="AllSizes">All</label>
+            </li>
             <li>
               <input
                 type="radio"
@@ -194,7 +197,7 @@ export default function Filter() {
           </form>
         </div>
       </aside>
-      <h3>Filters {JSON.stringify(filters)}</h3>
+      {/* <h3>Filters {JSON.stringify(filters)}</h3> */}
     </>
   );
 }
