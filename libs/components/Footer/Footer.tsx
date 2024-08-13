@@ -13,22 +13,6 @@ export default function Footer() {
 
         <div className="footer__nav">
           <div>
-            <h4 id="Need Help">Need Help</h4>
-            <ul aria-labelledby="Need Help">
-              <li>Track Order</li>
-              <li>FAQ's</li>
-              <li>Terms and Conditions</li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 id="Location">Location</h4>
-            <ul aria-labelledby="Location">
-              <li>Mumbai-400001, Maharashtra</li>
-            </ul>
-          </div>
-
-          <div>
             <h4 id="Terms-and-Policy">Terms and Policy</h4>
             <ul aria-labelledby="Terms-and-Policy">
               <li>
@@ -43,6 +27,13 @@ export default function Footer() {
               <li>
                 <Link href={"/privacy-policy"}>Privacy Policy</Link>
               </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 id="Location">Location</h4>
+            <ul aria-labelledby="Location">
+              <li>Mumbai-400001, Maharashtra</li>
             </ul>
           </div>
 
