@@ -15,17 +15,20 @@ export default async function Profile() {
           Profile
         </h2>
 
-        <div className="profile-body flex flex-col gap-[1rem] md:flex-row flex-wrap items-center w-full">
-          <div className="md:w-[47%] text-[1.2rem] font-[600] text-[var(--text-regular)] ">
+        <div className="profile-body flex flex-col gap-[1rem] md:flex-row flex-wrap items-center md:items-start w-full">
+          <div className=" text-[1.2rem] font-[600] text-[var(--text-regular)] ">
             {(session?.user as CustomSession).username}
           </div>
-          <div className="md:w-[47%] p-[0.5em_1em] rounded-[0.5em] text-[var(--text-light)] bg-[var(--text-dark)] hover:bg-[var(--text-purple)]">
+          <div className=" p-[0.5em_1em] rounded-[0.5em] text-[var(--text-light)] bg-[var(--text-dark)] hover:bg-[var(--text-purple)]">
             <Logout />
           </div>
 
           {(session?.user as CustomSession).role === "admin" && (
-            <Link href={"/admin/dashboard"} className="md:w-[47%] p-[0.5em_1em] rounded-[0.5em] text-[var(--text-light)] hover:bg-[var(--text-purple)] bg-[var(--text-dark)]" >
-                Dashboard
+            <Link
+              href={"/admin/dashboard"}
+              className=" p-[0.5em_1em] rounded-[0.5em] text-[var(--text-light)] hover:bg-[var(--text-purple)] bg-[var(--text-dark)]"
+            >
+              Dashboard
             </Link>
           )}
         </div>
