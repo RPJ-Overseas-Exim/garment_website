@@ -7,6 +7,7 @@ import "./OneProduct.css";
 import { FaStar } from "react-icons/fa6";
 import { FaStarHalf } from "react-icons/fa6";
 import BuyNow from "./BuyNow";
+import { Toaster } from "@/components/ui/sonner";
 
 export default async function page({ params }: { params: { id: string } }) {
   const product = (
@@ -14,58 +15,59 @@ export default async function page({ params }: { params: { id: string } }) {
   )[0];
   if (!product) notFound();
   return (
-    <section className="one-product">
-      <article className="product-overview ">
-        <div className="product-overview__images">
-          <Image
-            src={product.images}
-            alt={product.name}
-            width={0}
-            height={0}
-            sizes="100%"
-          />
-        </div>
-        <div className="product-overview__details">
-          <div className="one-product-name-rating-wrapper">
-            <h2 className="one-product__name">{product.name}</h2>
-
-            <div className="one-product__rating">
-              {[...Array.from({ length: 4 })].map((_, i) => {
-                return <FaStar key={i} />;
-              })}
-
-              <FaStarHalf />
-              <span>4.5</span>
-            </div>
+    <>
+      <section className="one-product">
+        <article className="product-overview ">
+          <div className="product-overview__images">
+            <Image
+              src={product.images}
+              alt={product.name}
+              width={0}
+              height={0}
+              sizes="100%"
+            />
           </div>
+          <div className="product-overview__details">
+            <div className="one-product-name-rating-wrapper">
+              <h2 className="one-product__name">{product.name}</h2>
 
-          <div className="one-product__sizes-buy-now">
-            <div className="one-product__size">
-              <h4>Size</h4>
-              <div className="one-product__sizes">
-                <button
-                  type="button"
-                  className={product.size === "M" ? "size-btn-active" : ""}
-                >
-                  M
-                </button>
-                <button
-                  type="button"
-                  className={product.size === "L" ? "size-btn-active" : ""}
-                >
-                  L
-                </button>
-                <button
-                  type="button"
-                  className={product.size === "XL" ? "size-btn-active" : ""}
-                >
-                  XL
-                </button>
+              <div className="one-product__rating">
+                {[...Array.from({ length: 4 })].map((_, i) => {
+                  return <FaStar key={i} />;
+                })}
+
+                <FaStarHalf />
+                <span>4.5</span>
               </div>
             </div>
-            <BuyNow product={product.name} />
-          </div>
-          {/* <div className="one-product__color">
+
+            <div className="one-product__sizes-buy-now">
+              <div className="one-product__size">
+                <h4>Size</h4>
+                <div className="one-product__sizes">
+                  <button
+                    type="button"
+                    className={product.size === "M" ? "size-btn-active" : ""}
+                  >
+                    M
+                  </button>
+                  <button
+                    type="button"
+                    className={product.size === "L" ? "size-btn-active" : ""}
+                  >
+                    L
+                  </button>
+                  <button
+                    type="button"
+                    className={product.size === "XL" ? "size-btn-active" : ""}
+                  >
+                    XL
+                  </button>
+                </div>
+              </div>
+              <BuyNow product={product.name} />
+            </div>
+            {/* <div className="one-product__color">
             <h4>Color</h4>
             <div className="one-product__colors">
               <input type="radio" name="color" value="blue" data-color="blue" />
@@ -79,8 +81,10 @@ export default async function page({ params }: { params: { id: string } }) {
               <input type="radio" name="color" value="red" data-color="red" />
             </div>
           </div> */}
-        </div>
-      </article>
-    </section>
+          </div>
+        </article>
+      </section>
+      <Toaster richColors />
+    </>
   );
 }
