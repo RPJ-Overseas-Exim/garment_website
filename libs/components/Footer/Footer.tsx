@@ -29,6 +29,24 @@ export default function Footer() {
           </div>
 
           <div>
+            <h4 id="Terms-and-Policy">Terms and Policy</h4>
+            <ul aria-labelledby="Terms-and-Policy">
+              <li>
+                <Link href={"/returns"}>Return & Refund</Link>
+              </li>
+              <li>
+                <Link href={"/shipping-policy"}>Shipping Policy</Link>
+              </li>
+              <li>
+                <Link href={"/terms-and-condition"}>Terms and Conditions</Link>
+              </li>
+              <li>
+                <Link href={"/privacy-policy"}>Privacy Policy</Link>
+              </li>
+            </ul>
+          </div>
+
+          <div>
             <h4 id="Contact">Contact</h4>
             <ul aria-labelledby="Contact" className="footer__contact">
               <li>
