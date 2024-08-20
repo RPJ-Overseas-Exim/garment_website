@@ -1,5 +1,5 @@
 export const Enquiry: { [x: string]: { [y: string]: string } } = {
-  Zolpidem: {
+  Shirt: {
     subject:
       "Enquiry for Zolpidem on Indiamart , {Name}, USA, PayPal accepted.",
     body: `
@@ -29,7 +29,7 @@ indiamart: https://www.indiamart.com/rrenterprises-raigad/
 Telegram @yourpharmausa
 Website: https://yourpharmastore.co.uk/products`,
   },
-  Clonazepam: {
+  "T-Shirt": {
     subject:
       "Enquiry for Clonazepam on IndiaMart, {Name}, USA, PayPal accepted",
     body: `
@@ -59,7 +59,7 @@ Your Pharma
 indiamart: https://www.indiamart.com/rrenterprises-raigad/
 Call/ text/ WhatsApp`,
   },
-  Alprazolam: {
+  Jeans: {
     subject:
       "Enquiry for Alprazolam on IndiaMart, {Name}, USA, PayPal accepted",
     body: `
@@ -88,7 +88,7 @@ Your Pharma
 indiamart: https://www.indiamart.com/rrenterprises-raigad/
 Call/ text/ WhatsApp`,
   },
-  Lorazepam: {
+  Boxxers: {
     subject: "Enquiry for Lorazepam on IndiaMart, {Name}, USA, PayPal accepted",
     body: `
 Hi {Name},
