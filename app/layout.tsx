@@ -33,6 +33,7 @@ export default async function RootLayout({
         className={`${openSans.variable} ${poppins.variable} ${shrikhand.variable}`}
       >
         {children}
+        <script src="//code.tidio.co/lpil9uof78wuptwaq72zcbsqucwgxtad.js" async></script>
       </body>
     </html>
   );
