@@ -29,6 +29,7 @@
   display: flex;
   list-style: none;
   gap: 1.3rem;
+  margin-inline: 1rem;
 }
 
 .nav__item {
