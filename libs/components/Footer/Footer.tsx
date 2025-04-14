@@ -33,25 +33,28 @@ export default function Footer() {
                     <div>
                         <h4 id="Location">Location</h4>
                         <ul aria-labelledby="Location">
-                            <li>Mumbai-400001, Maharashtra</li>
+                            <li>Myus Enterprises, Bhiwandi Thane, Maharashtra, India</li>
                         </ul>
                     </div>
 
                     <div>
-                        <h4 id="Contact">Contact</h4>
+                        <h4 id="Contact">Contact Us</h4>
+                        <div className="mb-4 flex flex-col">
+                            <span>{`Phone: +1 (882) 821-4944 `}</span>
+                        </div>
                         <ul aria-labelledby="Contact" className="footer__contact">
                             <li>
-                                <Link href="/">
+                                <Link href="https://instagram.com">
                                     <FaInstagram />
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/">
+                                <Link href="https://facebook.com">
                                     <FaFacebook />
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/">
+                                <Link href="mailto:myusenterprises@gmail.com">
                                     <FaEnvelope />
                                 </Link>
                             </li>
