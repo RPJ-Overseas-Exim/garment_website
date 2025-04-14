@@ -34,6 +34,9 @@ export default function Menu({ userLoggedIn }: { userLoggedIn: boolean }) {
                     <li className="nav__item active">
                         <Link href={"/about"}>About</Link>
                     </li>
+                    <li className="nav__item active">
+                        <Link href={"/contact-us"}>Contact Us</Link>
+                    </li>
                     {/*
                       <li className="nav__item">
                         <Link href={"#"}>Men</Link>

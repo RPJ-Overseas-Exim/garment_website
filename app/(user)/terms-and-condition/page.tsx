@@ -146,7 +146,7 @@ export default function page() {
                     </div>
                     <p className="mt-2 mb-2 pl-7 flex flex-col ">
                         <span>{`Phone: +1 8828214944 `}</span>
-                        <span>{`abc@gmail.com`}</span>
+                        <span>{`myusenterprises@gmail.com`}</span>
                     </p>
                 </div>
             </div>
