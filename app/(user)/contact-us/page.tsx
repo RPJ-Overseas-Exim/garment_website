@@ -14,7 +14,7 @@ export default function ContactUs() {
                             <FaLocationDot size={24} />
                             <div>
                                 <h4 className="font-semibold">Address</h4>
-                                <p>Myus Enterprises, Bhiwandi<br />Thane, Maharashtra, India</p>
+                                <p>Myus Enterprises, Kandivali<br />Mumbai, Maharashtra, India</p>
                             </div>
                         </div>
 
