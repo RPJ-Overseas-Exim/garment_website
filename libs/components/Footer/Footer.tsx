@@ -33,7 +33,7 @@ export default function Footer() {
                     <div>
                         <h4 id="Location">Location</h4>
                         <ul aria-labelledby="Location">
-                            <li>Myus Enterprises, Bhiwandi Thane, Maharashtra, India</li>
+                            <li>Myus Enterprises, Kandivali Mumbai, Maharashtra, India</li>
                         </ul>
                     </div>
 
