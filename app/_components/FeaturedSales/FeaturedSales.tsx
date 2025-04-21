@@ -7,14 +7,14 @@ export default function FeaturedSales() {
       heading: "Low Prices",
       title: "High Coziness",
       discount: "30%",
-      link: "/",
+      link: "/shop",
       image: "/assets/images/featuredSales_card1.webp",
     },
     {
       heading: "Beyoung Presents",
       title: "Breezy Summer Style",
       discount: "50%",
-      link: "/",
+      link: "/shop",
       image: "/assets/images/featuredSales_card2.webp",
     },
   ];

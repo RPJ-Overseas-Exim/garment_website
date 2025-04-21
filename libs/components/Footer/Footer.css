@@ -60,7 +60,7 @@
   .footer__nav {
     flex-direction: row;
     justify-content: space-between;
-    width: 70%;
+    width: 90%;
     gap: 0;
   }
 }

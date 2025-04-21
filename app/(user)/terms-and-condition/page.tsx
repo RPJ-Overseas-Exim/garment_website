@@ -7,88 +7,53 @@ export default function page() {
                 </h1>
                 <hr className="w-full border-[var(--text-regular)]" />
                 <h2 className="text-[var(--text-regular)] font-[400] text-md mt-2 mb-3">
-                    {`Last updated April 31, 2024`}
+                    {`Last updated April 18, 2024`}
                 </h2>
                 <h2 className="text-[var(--text-dark)] font-[600] text-lg mt-2 mb-3">
                     AGREEMENT TO OUR LEGAL TERMS
                 </h2>
                 <div className="mt-3 mb-3 font-[600] text-[var(--text-regular)] text-lg">
                     <details>
-                        <summary className="font-semibold text-xl text-[var(--text-dark)]">{`What Information We Collect About You?`}</summary>
+                        <summary className="font-semibold text-xl text-[var(--text-dark)]">
+                        {`What Information Do We Collect?`}
+                        </summary>
                         <div className="mt-2 mb-2 pl-7 flex flex-col gap-y-2">
                             <p>
-                                {`We may collect two basic types of information through the Online
-                Services: (1) information you provide directly to us and (2)
-                information that is automatically provided to us or collected
-                through your use of our Online Services.`}
+                                {`We collect two main types of information when you use our website or app:
+                                    (1) Information you provide – like your name, phone number, email, address, and any other details you share with us directly.
+                                    (2) Information we collect automatically – this includes things like your device type, browser, and general usage data.`}
                             </p>
                             <p>
-                                {`Such information identifies you, such as your full name,
-                telephone number, email address, postal address, certain account
-                numbers, and other information described in this Privacy Policy.`}
+                                {`Some of this information can identify you personally, and some of it helps us understand how people use our services.`}
                             </p>
                             <p>
-                                {`When you use the Online Services, you may provide certain
-                information directly to us, including when you allow us to
-                obtain information about you from other sources.`}
-                            </p>
-                            <p>
-                                {`Information also includes certain automatically-collected
-                information. We may obtain information that is automatically
-                collected through the Online Services. The
-                automatically-collected information may include demographic,
-                de-identified, aggregated, or certain information collected
-                automatically through your device, such as technical information
-                about your device, web browser information, and server log files
-                collected by us or provided by you.`}
-                            </p>
-                            <p>
-                                {`You may limit the Information you provide or make available to
-                us if you want to; however, that may limit your ability to
-                access or use certain functions of the Online Services or to
-                request certain services or information.`}
+                                {`You might also allow us to get your information from other sources. You're free to limit what you share with us, but doing so may prevent you from using certain features or services.`}
                             </p>
                         </div>
                     </details>
                 </div>
                 <div className="mt-3 mb-3 font-[600] text-[var(--text-regular)] text-lg">
                     <details>
-                        <summary className="font-semibold text-xl text-[var(--text-dark)]">{`How We Use Your Information?`}</summary>
+                        <summary className="font-semibold text-xl text-[var(--text-dark)]">
+                        {`How Do We Use Your Information?`}
+                        </summary>
                         <p className="mt-2 mb-2 pl-7">
-                            {`We may use your Information:`}
+                            {`We use your information to:`}
                             <ul className="list-disc flex flex-col gap-y-2 pl-7 mt-1 mb-1">
-                                <li>{`To respond to an email or
-              particular request from you`}</li>
-                                <li>{`To communicate with you `}</li>
-                                <li>{`To provide
-              you with content, services, and functionality through our Online
-              Services or other services we offer`}</li>
-                                <li>{`To process an application
-              for a product or service as requested by you`}</li>
-                                <li>{`To authenticate you
-              on any portion of our Online Services`}</li>
-                                <li>{`To administer surveys and
-              promotions`}</li>
-                                <li>{`To personalise your experience with our Online
-              Services`}</li>
-                                <li>{`To provide you with informational or promotional
-              offers, as permitted by law, that may be useful to you, such as
-              information about our products or services`}</li>
-                                <li>{`To perform analytics
-              and to improve our products, Online Services, and advertising`}</li>
-                                <li>{`To
-              facilitate the provision of software updates and product support`}</li>
-                                <li>{`To improve products and other services related to Online Services`}</li>
-                                <li>{`To comply with applicable laws, regulations, and legal processes`}</li>
-                                <li>{`To protect someone's health, safety, or welfare`}</li>
-                                <li>{`To protect our
-              rights, the rights of affiliates, or to take appropriate legal
-              action, such as to enforce our Terms of Use`}</li>
-                                <li>{`To keep a record of
-              our transactions and communications`}</li>
-                                <li>{`As otherwise necessary or
-              useful for us to conduct our business, so long as such use is
-              permitted by law or for any other purpose with your consent`}</li>
+                                <li>{`Respond to your questions or requests`}</li>
+                                <li>{`Communicate with you`}</li>
+                                <li>{`Provide our services and features`}</li>
+                                <li>{`Process applications you submit`}</li>
+                                <li>{`Verify your identity when needed`}</li>
+                                <li>{`Run surveys and promotions`}</li>
+                                <li>{`Personalize your experience`}</li>
+                                <li>{`Share offers or updates about our products and services (as allowed by law)`}</li>
+                                <li>{`Improve our services, website, and app`}</li>
+                                <li>{`Provide updates and support for our software`}</li>
+                                <li>{`Follow legal rules and respond to legal requests`}</li>
+                                <li>{`Protect your safety, rights, and privacy`}</li>
+                                <li>{`Keep records of our communications with you`}</li>
+                                <li>{`Carry out any other activity with your permission or as required by law`}</li>
                             </ul>
                         </p>
                     </details>
@@ -96,53 +61,28 @@ export default function page() {
                 <div className="mt-3 mb-3 font-[600] text-[var(--text-regular)] text-lg">
                     <details>
                         <summary className="font-semibold text-xl text-[var(--text-dark)]">
-                            OUR USE OF DATA
+                            How We Use Your Data
                         </summary>
                         <div className="mt-2 mb-2 flex flex-col pl-7 gap-y-2">
-                            <p>{`Any or all of the above Data may be required by us
-        from time to time to provide information relating to Your Clothes Stores
-        and to work on the experience regarding our website or mobile
-        application.`}</p>
-                            <div>
-                                Specifically, Data may be used by us for the following reasons:{" "}
-                            </div>
+                            <p>{`We may use your information to make your experience with Myus Enterprise better. For example:`}</p>
                             <ul className=" list-disc mt-2 mb-2 flex flex-col gap-y-2 pl-7">
-                                <li>{`Carry out our obligations arising from any contract entered
-        into between you and us`}</li>
-                                <li>{`To communicate with you about products and/or
-        services offered by us`}</li>
-                                <li>{`To provide you with offers (including financial
-        products and/or services), personalized services, and recommendations
-        and improve your experience on our website and mobile application`}</li>
-                                <li>{`To
-        operate, evaluate, and improve our business, website, and mobile
-        application`}</li>
-                                <li>{`Generate aggregated data to prepare insights to enable us
-        to understand customer behaviour, patterns, and trends with a view to
-        learning more about your preferences or other characteristics`}</li>
-                                <li>{`Provide
-        privileges and benefits to you, marketing, and promotional campaigns
-        based on your profile`}</li>
-                                <li>{`To get in touch with you by responding to your
-        requests, questions, feedback, claims, or disputes to improve our
-        services`}</li>
-                                <li>{`To inform you about the latest offer and rewards on Your
-        Clothes Stores`}</li>
-                                <li>{`To enforce the terms of use of our website and mobile
-        application`}</li>
-                                <li>{`To protect you from fraud, illegal activity, harm,
-        financial loss, and other legal or information security risks We treat
-        these inferences as personal information under applicable law. According
-        to applicable law, we will only use your personal information (including
-        sensitive personal information) with your consent, as necessary, to
-        provide you with products and services. `}</li>
+                                <li>{`To fulfill any agreement or contract you’ve made with us`}</li>
+                                <li>{`To share information about our services or special offers`}</li>
+                                <li>{`To recommend products or services that may interest you`}</li>
+                                <li>{`To improve how our website and app work`}</li>
+                                <li>{`To understand what our users like and how they behave, so we can improve`}</li>
+                                <li>{`To offer special rewards, discounts, or promotions`}</li>
+                                <li>{`To reply to your feedback, questions, or issues`}</li>
+                                <li>{`To inform you about new deals or updates`}</li>
+                                <li>{`To enforce the rules of using our website/app`}</li>
+                                <li>{`To keep you safe from fraud or harmful activity`}</li>
                             </ul>
                         </div>
                     </details>
                 </div>
                 <div className="mt-3 mb-3 font-[600] text-[var(--text-regular)] text-lg">
                     <div className="font-semibold text-xl text-[var(--text-dark)]">
-                        Your Clothes Store
+                        Myus Enterprise
                     </div>
                     <p className="mt-2 mb-2 pl-7 flex flex-col ">
                         <span>{`Phone: +1 8828214944 `}</span>

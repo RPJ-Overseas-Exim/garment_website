@@ -7,7 +7,7 @@ import fs from "fs";
 import { nanoid } from "nanoid";
 
 export const metadata: Metadata = {
-  title: "RPJ Garments",
+  title: "Myus Enterprise",
   description: "Get all the latest trending garments at the best prices",
 };
 

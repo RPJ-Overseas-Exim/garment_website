@@ -15,7 +15,7 @@ export default async function Navbar() {
                 {/* Logo element */}
                 <h2 className="nav__logo">
                     <Link href={"/"} className="nav__logo-link">
-                        Myus Enterprises
+                        Myus Enterprise
                     </Link>
                 </h2>
 

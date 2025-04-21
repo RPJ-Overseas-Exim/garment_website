@@ -13,7 +13,7 @@ export default function page() {
                 </h2>
 
                 <div className="mt-3 mb-3 font-[600] text-[var(--text-regular)] text-lg">
-                    <b>Your Clothes Store</b>
+                    <b>Myus Enterprise</b>
                     {` is offering their customers two different
           delivery options to choose from. Customers can select between any type
           of shipping according to their needs, i.e., Global Shipping & USA
@@ -41,7 +41,7 @@ export default function page() {
                 </div>
                 <div className="mt-3 mb-3 font-[600] text-[var(--text-regular)] text-lg">
                     <div className="font-semibold text-xl text-[var(--text-dark)]">
-                        Your Clothes Store
+                        Myus Enterprise
                     </div>
                     <p className="mt-2 mb-2 pl-7 flex flex-col">
                         <span>{`Phone: +1 8828214944 `}</span>

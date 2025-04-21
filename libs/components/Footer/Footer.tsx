@@ -7,7 +7,7 @@ export default function Footer() {
     return (
         <footer className="footer">
             <div className="footer__container container">
-                <h2 className="footer__title">Myus Enterprises</h2>
+                <h2 className="footer__title">Myus Enterprise</h2>
 
                 <hr className="divider" />
 
@@ -30,10 +30,10 @@ export default function Footer() {
                         </ul>
                     </div>
 
-                    <div>
+                    <div className="md:max-w-[33%]">
                         <h4 id="Location">Location</h4>
                         <ul aria-labelledby="Location">
-                            <li>Myus Enterprises, Kandivali Mumbai, Maharashtra, India</li>
+                            <li>{`Third Floor, Flat No-304 Bldg No-37, CTS 6A Part Mhada SN 263, 64T S SRD Project Liink Road, Kandivali West, Mumbai Suburban, Maharashtra, 400067`}</li>
                         </ul>
                     </div>
 
@@ -65,7 +65,7 @@ export default function Footer() {
                 <hr className="divider" />
 
                 <span className="footer__bottom">
-                    Copyright &copy; Myus Enterprises. All rights reserved.
+                    Copyright &copy; Myus Enterprise. All rights reserved.
                 </span>
             </div>
         </footer>

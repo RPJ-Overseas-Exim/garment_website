@@ -77,7 +77,7 @@ export default function ImageSlider({ images }: { images: sliderImages[] }) {
           <p>T-Shirt / Tops</p>
           <h1>Monsoon Value Pack</h1>
           <h4>cool / colorful / comfy</h4>
-          <Link className="shop-now--button" href="/">
+          <Link className="shop-now--button" href="/shop">
             Shop Now
           </Link>
         </div>

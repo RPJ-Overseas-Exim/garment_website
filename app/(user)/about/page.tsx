@@ -12,7 +12,7 @@ export default function AboutPage() {
                     <div className="container mx-auto px-4">
                         <div className="text-center mb-12">
                             <h2 className="text-3xl font-semibold text-gray-800">Our Story</h2>
-                            <p className="text-lg text-gray-600 mt-4 mx-auto">{`At Myus Enterprises, we believe in the power of fashion to express your individuality. We are a passionate team of designers, stylists, and visionaries who work tirelessly to create stylish, sustainable, and comfortable clothing for every occasion. Whether you're looking for everyday wear or something special, we've got you covered.`}</p>
+                            <p className="text-lg text-gray-600 mt-4 mx-auto">{`At Myus Enterprise, we believe in the power of fashion to express your individuality. We are a passionate team of designers, stylists, and visionaries who work tirelessly to create stylish, sustainable, and comfortable clothing for every occasion. Whether you're looking for everyday wear or something special, we've got you covered.`}</p>
                         </div>
 
                         <div className="flex justify-center mb-12">

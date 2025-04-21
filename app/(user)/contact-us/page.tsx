@@ -14,7 +14,7 @@ export default function ContactUs() {
                             <FaLocationDot size={24} />
                             <div>
                                 <h4 className="font-semibold">Address</h4>
-                                <p>Myus Enterprises, Kandivali<br />Mumbai, Maharashtra, India</p>
+                                <p>{`Third Floor, Flat No-304 Bldg No-37, CTS 6A Part Mhada SN 263, 64T S SRD Project Liink Road, Kandivali West, Mumbai Suburban, Maharashtra, 400067`}</p>
                             </div>
                         </div>
 
@@ -40,25 +40,25 @@ export default function ContactUs() {
                     <div>
                         <label htmlFor="name" className="block text-sm font-medium">Full Name</label>
                         <input type="text" name="name" id="name" required
-                            className="mt-1 w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2" />
+                            className="mt-1 w-full rounded-md border-[var(--border-light)] shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2" />
                     </div>
 
                     <div>
                         <label htmlFor="email" className="block text-sm font-medium">Email</label>
                         <input type="email" name="email" id="email" required
-                            className="mt-1 w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2" />
+                            className="mt-1 w-full rounded-md border-[var(--border-light)] shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2" />
                     </div>
 
                     <div>
                         <label htmlFor="subject" className="block text-sm font-medium">Subject</label>
                         <input type="text" name="subject" id="subject"
-                            className="mt-1 w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2" />
+                            className="mt-1 w-full rounded-md border-[var(--border-light)] shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2" />
                     </div>
 
                     <div>
                         <label htmlFor="message" className="block text-sm font-medium">Message</label>
                         <textarea name="message" id="message" rows={4} required
-                            className="mt-1 w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2"></textarea>
+                            className="mt-1 w-full rounded-md border-[var(--border-light)] shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2"></textarea>
                     </div>
 
                     <div className="text-right">

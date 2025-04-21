@@ -159,7 +159,7 @@ export default function Privacy() {
                 </div>
                 <div className="mt-3 mb-3 font-[600] text-[var(--text-regular)] text-lg">
                     <div className="font-semibold text-xl text-[var(--text-dark)]">
-                        Your Clothes Store
+                        Myus Enterprise
                     </div>
                     <p className="mt-2 mb-2 pl-7 flex flex-col ">
                         <span>{`Phone: +1 8828214944 `}</span>

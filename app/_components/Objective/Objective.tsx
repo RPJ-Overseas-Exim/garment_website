@@ -1,3 +1,4 @@
+import Link from "next/link"
 import "./Objective.css";
 
 export default function Objective() {
@@ -19,7 +20,7 @@ export default function Objective() {
             </div>
 
             {/* objective button */}
-            <div className="objective__button">Shop Now</div>
+            <Link className="objective__button" href="/shop">Shop Now</Link>
           </div>
         </div>
 
