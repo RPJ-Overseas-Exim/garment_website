@@ -54,7 +54,7 @@ export default function Products({
                   </div>
 
                   <div className="product__description-right">
-                    <div className="product__price">{product.price}</div>
+                    <div className="product__price">$ {product.price}</div>
                   </div>
                 </div>
               </div>

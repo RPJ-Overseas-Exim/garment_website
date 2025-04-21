@@ -40,7 +40,7 @@ export default function Footer() {
                     <div>
                         <h4 id="Contact">Contact Us</h4>
                         <div className="mb-4 flex flex-col">
-                            <span>{`Phone: +1 (882) 821-4944 `}</span>
+                            <span>{`Phone: +91 98339-52804 `}</span>
                         </div>
                         <ul aria-labelledby="Contact" className="footer__contact">
                             <li>

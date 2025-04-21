@@ -22,7 +22,7 @@ export default function ContactUs() {
                             <IoCall size={24} />
                             <div>
                                 <h4 className="font-semibold">Phone</h4>
-                                <p>{`+1 (882) 821-4944`}</p>
+                                <p>{`Phone: +91 98339-52804 `}</p>
                             </div>
                         </div>
 

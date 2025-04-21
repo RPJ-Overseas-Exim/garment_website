@@ -44,7 +44,7 @@ export default function page() {
                         Myus Enterprise
                     </div>
                     <p className="mt-2 mb-2 pl-7 flex flex-col">
-                        <span>{`Phone: +1 8828214944 `}</span>
+                        <span>{`Phone: +91 98339-52804 `}</span>
                         <span>{`myusenterprises@gmail.com`}</span>
                     </p>
                 </div>
