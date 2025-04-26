@@ -11,7 +11,7 @@ export default function Privacy() {
                 </h2>
                 <div className="mt-3 mb-3 text-[var(--text-regular)] font-md text-lg flex flex-col gap-y-2">
                     <p>
-                        <b>YourClothingStore</b>
+                        <b>Myus Enterprise</b>
                         {` is committed to your privacy and will not
             share any user information with any third party without your
             consent, except as outlined in the privacy statement or as permitted
@@ -48,10 +48,10 @@ export default function Privacy() {
                 <div className="mt-3 mb-3 font-[600] text-[var(--text-regular)] text-lg">
                     <details>
                         <summary className="font-semibold text-xl text-[var(--text-dark)]">
-                            {`What Personal Information Does YourClothingStore Gather?`}
+                            {`What Personal Information Does Myus Enterprise Gather?`}
                         </summary>
                         <p className="mt-2 mb-2 pl-7">
-                            {`YourClothingStore only gathers essential details such as your
+                            {`Myus Enterprise only gathers essential details such as your
               name, contact number, email, and previous orders. None of your
               financial or bank details will be stored on any of our servers or
               website. We collect information when you use our website.
@@ -65,13 +65,13 @@ export default function Privacy() {
                 <div className="mt-3 mb-3 font-[600] text-[var(--text-regular)] text-lg">
                     <details>
                         <summary className="font-semibold text-xl text-[var(--text-dark)]">
-                            {`How Secure Is Your Information With YourClothingStore?`}
+                            {`How Secure Is Your Information With Myus Enterprise?`}
                         </summary>
                         <p className="mt-2 mb-2 pl-7">
-                            {`YourClothingStore does not sell, share, or distribute your data
+                            {`Myus Enterprise does not sell, share, or distribute your data
               with third parties for any marketing purposes. We will only share
               your data in compliance with applicable laws and regulations.
-              YourClothingStore has implemented a data security program
+              Myus Enterprise has implemented a data security program
               containing administrative, technical, and physical controls
               designed to safeguard your data from unlawful use and unauthorized
               disclosure. We encrypt customer data securely on a
@@ -89,7 +89,7 @@ export default function Privacy() {
                 <div className="mt-3 mb-3 font-[600] text-[var(--text-regular)] text-lg">
                     <details>
                         <summary className="font-semibold text-xl text-[var(--text-dark)]">
-                            {`Does YourClothingStore Disclose The Information It Receives?`}
+                            {`Does Myus Enterprise Disclose The Information It Receives?`}
                         </summary>
                         <p className="mt-2 mb-2 pl-7">
                             {`We guarantee that no personal information you provide will be used
@@ -105,7 +105,7 @@ export default function Privacy() {
                             {`Children's Privacy`}
                         </summary>
                         <p className="mt-2 mb-2 pl-7">
-                            {`YourClothingStore websites are not intended to attract children,
+                            {`Myus Enterprise websites are not intended to attract children,
               and we do not intentionally collect any personal data from anyone
               under the age of 18.`}
                         </p>
